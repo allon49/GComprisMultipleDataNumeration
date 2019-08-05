@@ -1,6 +1,6 @@
-/* GCompris - share.js
+/* GCompris - numeration.js
  *
- * Copyright (C) 2016 Stefan Toncu <stefan.toncu29@gmail.com>
+ * Copyright (C) 2019 Emmanuel Charruau <echarruau@gmail.com>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@
 .import QtQuick 2.6 as Quick
 
 var currentLevel = 0
-var numberOfLevel = 10
+var numberOfLevel = 0
 var items
 
 var savedTotalBoys
@@ -29,6 +29,9 @@ var savedTotalCandies
 var savedPlacedInGirls
 var savedPlacedInBoys
 var savedCurrentCandies
+
+var numbersToConvert = []
+var numbersToConvertIndex = 0
 
 
 var classConstant = {
@@ -45,8 +48,8 @@ var numberWeightConstant = {
 }
 
 var numberWeightConstantdeb = ["unit","ten","hundred"]
-
 var numberWeightConstantDeb = ["Unit class","Thousand class","Million class","Milliard class"]
+var classNamesArray = {}
 
 function createNumberClasses() {
     var numberClasses = [];
@@ -59,27 +62,12 @@ function createNumberClasses() {
     return numberClasses;
 }
 
-
-var classNamesArray = {}
-
-
-/*var weightValuesArray = new Array(9)
-var numberClassWeightsArray = {"hundred":weightValuesArray, "ten":weightValuesArray, "unit":weightValuesArray}
-var classNamesArray = {"Unit class": 0, "Thousand class": 1, "Million class":2, "Milliard class":3}
-var numberClassWeightsKeysArray = Object.keys(numberClassWeightsArray);
-var classNamesKeysArray = Object.keys(classNamesArray);
-var numberClassesArray = [numberClassWeightsArray]*/
-
-
 function removeClassInNumberClassesArray(className) {
-
-console.log(numberClassesArray)
-
+    console.log(numberClassesArray)
     var index = numberClassesArray.indexOf(className);
     if (index > -1) {
        numberClassesArray.splice(index, 1);
     }
-
     console.log(numberClassesArray)
 }
 
@@ -96,17 +84,13 @@ function writeClassNameValue(className, numberWeightKey, rowIndex, numberValue) 
     console.log("numberWeightKey: " + numberWeightKey)
     console.log("writeClassNameValue: classNamesArray["+className+"]["+numberWeightConstant[numberWeightKey] +"]["+rowIndex+"] = "+numberValue);
     classNamesArray[classConstant[className]][numberWeightConstant[numberWeightKey]][rowIndex] = numberValue
-
     readClassNameValues()
-
 }
 
 function readClassNameValues() {
-
     var enteredValue = 0
     for (var i=0; i<Object.keys(classConstant).length; i++) {
         console.log("ClassNameKey: " + numberWeightConstantDeb[i])
-
         for (var j=0; j<3; j++) {
             console.log("Class + NumberWeightKey: " + numberWeightConstantDeb[i] + " " + numberWeightConstantdeb[j])
             for (var k=0; k<9; k++) {
@@ -119,12 +103,9 @@ function readClassNameValues() {
 }
 
 function readNumerationTableValues() {
-
     var numberValueAnswered = 0
-
     for (var i=0; i<items.numberClassListModel.count; i++) {
         console.log("classe name " + items.numberClassListModel.get(i).name)
-
         var className = items.numberClassListModel.get(i).name
         for (var j=0; j<numberClassWeightsKeysArray.length; j++) {
             for (var k=0; k<9; k++) {
@@ -133,23 +114,20 @@ function readNumerationTableValues() {
             }
         }
     }
-
     console.log("numberValueAnswere is: " + numberValueAnswered)
 }
 
 
-
 function testModel() {
     console.log("testModel")
-    console.log(items.numberClassListModel.get(0).name)
+    numbersToConvertIndex++
+    items.numberToConvertRectangle.text = numbersToConvert[numbersToConvertIndex]
 
 }
 
 
-
 function addClassInNumberClassesArray() {
     numberClassesArray.push(numberClass)
-
     for (var i=0; i<9; i++) {
         numberClassesArray[numberClassIndex][numberWeightType][numberWeightIndex] = 123
     }
@@ -163,15 +141,12 @@ function removeClassInNumberClassesArray(numberClassIndex, numberWeightTyp, numb
     numberClassesArray[numberClassIndex][numberWeightType][numberWeightIndex] = 123
 }
 
-function clearClassWeightValues() {
-
-}
-
 
 function start(items_) {
     items = items_
     currentLevel = 0
     initLevel()
+    numberOfLevel = items.levels.length
 }
 
 function stop() {
@@ -185,19 +160,24 @@ function initLevel() {
     var filename = "resource/board/"+ "board" + currentLevel + ".qml"
     items.dataset.source = filename
 
+    items.instruction.text = items.levels[currentLevel].objective
+    items.instruction.show()
+
+    numbersToConvert = items.levels[currentLevel].numbers
+
+    items.numberToConvertRectangle.text = numbersToConvert[numbersToConvertIndex]
+
+
 //    setUp()
 
     classNamesArray = createNumberClasses.call();
 
+    console.log("level length: " + items.dataset.item.levels.length)
+
     console.log("stop init ")
 
-
-
-//    numberClassesArray[0]["unity"][0] = 123
-
-//    console.log("yyyy" + numberClassesArray[0]["unity"][0])
-
 }
+
 
 function setUp() {
     var levelData = items.dataset.item
@@ -249,7 +229,7 @@ function setUp() {
         //~ singular and %n girl in the center.
         //~ plural and %n girls in the center.
         items.instruction.text += qsTr("and %n girl(s) in the center. ", "Second part of Place %n boy(s) and %n girl(s) in the center. Then equally split %n pieces of candy between them.", items.totalGirls);
-        
+
         //~ singular Then equally split %n candy between them.
         //~ plural Then equally split %n candies between them.
         items.instruction.text += qsTr("Then equally split %n pieces of candy between them.", "Third part of Place %n boy(s) and %n girl(s) in the center. Then equally split %n pieces of candy between them.", items.totalCandies);

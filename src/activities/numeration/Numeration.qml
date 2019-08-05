@@ -59,6 +59,10 @@ ActivityBase {
             property alias leftWidget: leftWidget
             property int barHeightAddon: ApplicationSettings.isBarHidden ? 1 : 3
             property int cellSize: Math.min(background.width / 11, background.height / (9 + barHeightAddon))
+            property int currentSubLevel: 0
+            property int nbSubLevel
+            property var levels: activity.datasetLoader.item.data
+            property alias numberToConvertRectangle: numberToConvertRectangle
         }
 
         Loader {
@@ -113,6 +117,14 @@ ActivityBase {
 
             keys: "NumberClassKey"
 
+
+            //shows/hides the objective/instruction
+            MouseArea {
+                anchors.fill: mainZoneArea
+                onClicked: instruction.show()
+            }
+
+
             Rectangle {
                 id: dropRectangle
 
@@ -123,22 +135,38 @@ ActivityBase {
             onDropped: {
                 var className = drag.source.name
                 numberClassListModel.append({"name": className, "element_src": drag.source})
-
                 console.log("drag.source" + drag.source)
                 numberClassListModel.get(numberClassListModel.count-1).element_src.dragEnabled = false
-
             }
 
 
             Rectangle {
                 id: numberToConvertRectangle
-
-                width: parent.width / 20
-                height: parent.height / 10
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.top: parent.top
-                color: "red"
+                anchors.fill: numberToConvertRectangleTxt
+                color: "blue"
+                opacity: 0.8
+                property alias text: numberToConvertRectangleTxt.text
             }
+
+            //display number to convert
+            GCText {
+                id: numberToConvertRectangleTxt
+                anchors {
+                    top: background.top
+                    topMargin: -10
+                    left: leftWidget.right
+                }
+                opacity: numberToConvertRectangle.opacity
+                //z: instruction.z
+                fontSize: background.vert ? regularSize : smallSize
+                color: "white"
+                style: Text.Outline
+                styleColor: "black"
+                horizontalAlignment: Text.AlignHCenter
+                width: Math.max(Math.min(parent.width * 0.8, text.length * 8), parent.width * 0.3)
+                wrapMode: TextEdit.WordWrap
+            }
+
 
 
             Rectangle {
@@ -154,11 +182,9 @@ ActivityBase {
                        id: listviewid
 
                        anchors { fill: parent; margins: 2 }
-
                        model: visualModel
                        orientation: ListView.Horizontal
                        interactive: false
-
                        spacing: 4
                        cacheBuffer: 50
                  }
@@ -341,14 +367,14 @@ ActivityBase {
 
             function show() {
                 if(text)
-                    opacity = 1
+                    opacity = 0.8
             }
             function hide() {
                 opacity = 0
             }
         }
 
-        //instruction for playing the game
+        //display level objective
         GCText {
             id: instructionTxt
             anchors {
@@ -366,6 +392,7 @@ ActivityBase {
             width: Math.max(Math.min(parent.width * 0.8, text.length * 8), parent.width * 0.3)
             wrapMode: TextEdit.WordWrap
         }
+
 
         //dragable weights list (leftwidget)
         Rectangle {
@@ -421,6 +448,7 @@ ActivityBase {
                             onClicked: {
                                 background.checkAnswer()
                                 Activity.testModel()
+
                             }
                         }
                     }
@@ -531,45 +559,6 @@ ActivityBase {
         }
 
 
-        DialogActivityConfig {
-            id: dialogActivityConfig
-            currentActivity: activity
-            content: Component {
-                Item {
-                    height: column.height
-
-                    Column {
-                        id: column
-                        spacing: 10
-                        width: parent.width
-
-                        GCDialogCheckBox {
-                            id: easyModeBox
-                            width: dialogActivityConfig.width
-                            text: qsTr("Display candy counter")
-                            checked: background.easyMode
-                            onCheckedChanged: {
-                                background.easyMode = checked
-                                Activity.reloadRandom()
-                            }
-                        }
-                    }
-                }
-            }
-
-            onLoadData: {
-                if(dataToSave && dataToSave["mode"]) {
-                    background.easyMode = (dataToSave["mode"] === "true");
-                }
-            }
-
-            onSaveData: {
-                dataToSave = { "mode": "" + background.easyMode }
-            }
-
-            onClose: home()
-        }
-
         //bar buttons
         DialogHelp {
             id: dialogHelp
@@ -607,16 +596,9 @@ ActivityBase {
                 bottom: background.vert ? bar.top : leftWidget.bottom
                 margins: 3 * ApplicationInfo.ratio
             }
-            width: basketWidget.width
-            height: background.vert ? (basketWidget.height * 0.8) : basketWidget.height
-            numberOfSubLevels: items.nbSubLevel
-            currentSubLevel: items.currentSubLevel + 1
+            width: 100
+            height: 100
         }
-    }
-
-    Item {
-        id: dragContainer
-        anchors.fill: parent
     }
 
 }
