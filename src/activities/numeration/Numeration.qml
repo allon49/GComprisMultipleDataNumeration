@@ -19,7 +19,7 @@
 import QtQuick 2.6
 import GCompris 1.0
 import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.2
+import QtQuick.Controls 1.5
 import QtQml.Models 2.1
 
 import "../../core"
@@ -53,10 +53,12 @@ ActivityBase {
             property alias bar: bar
             property alias bonus: bonus
             property alias instruction: instruction
-            property alias listModel: listModel
             property alias dataset: dataset
             property alias  numberClassListModel: numberClassListModel
             property alias leftWidget: leftWidget
+            property alias progressBar: progressBar
+            property alias numberClassDropAreaRepeater: numberClassDropAreaRepeater
+            property alias classNameListView: classNameListView
             property int barHeightAddon: ApplicationSettings.isBarHidden ? 1 : 3
             property int cellSize: Math.min(background.width / 11, background.height / (9 + barHeightAddon))
             property int currentSubLevel: 0
@@ -75,27 +77,6 @@ ActivityBase {
 
         property bool vert: background.width >= background.height
 
-
-        //check if the answer is correct
-        function checkAnswer() {
-
-            Activity.readNumerationTableValues()
-
-          /*  //condition without rest
-                if (rest == 0 && ok == items.totalChildren) {
-                    bonus.good("flower")
-                    return
-                }
-                //condition with rest
-                else if (rest == okRest && ok == items.totalChildren) {
-                    bonus.good("tux")
-                    return
-                }
-            }
-
-            //else => bad
-            bonus.bad("flower")*/
-        }
 
 
         //mainZone
@@ -117,16 +98,14 @@ ActivityBase {
 
             keys: "NumberClassKey"
 
-
             //shows/hides the objective/instruction
             MouseArea {
                 anchors.fill: mainZoneArea
                 onClicked: instruction.show()
             }
 
-
             Rectangle {
-                id: dropRectangle
+                id: mainZoneAreaDropRectangleVisualisation
 
                 anchors.fill: parent
                 color: "pink"
@@ -134,39 +113,76 @@ ActivityBase {
 
             onDropped: {
                 var className = drag.source.name
-                numberClassListModel.append({"name": className, "element_src": drag.source})
+                numberClassListModel.append({"name": className, "element_src": drag.source, "misplaced": false})
                 console.log("drag.source" + drag.source)
                 numberClassListModel.get(numberClassListModel.count-1).element_src.dragEnabled = false
             }
 
-
             Rectangle {
-                id: numberToConvertRectangle
-                anchors.fill: numberToConvertRectangleTxt
-                color: "blue"
-                opacity: 0.8
-                property alias text: numberToConvertRectangleTxt.text
-            }
+                id: topBanner
 
-            //display number to convert
-            GCText {
-                id: numberToConvertRectangleTxt
+                height: mainZoneArea.height / 10
+                width: mainZoneArea.width
                 anchors {
-                    top: background.top
-                    topMargin: -10
-                    left: leftWidget.right
+                    left: mainZoneArea.left
+                    top: mainZoneArea.top
                 }
-                opacity: numberToConvertRectangle.opacity
-                //z: instruction.z
-                fontSize: background.vert ? regularSize : smallSize
-                color: "white"
-                style: Text.Outline
-                styleColor: "black"
-                horizontalAlignment: Text.AlignHCenter
-                width: Math.max(Math.min(parent.width * 0.8, text.length * 8), parent.width * 0.3)
-                wrapMode: TextEdit.WordWrap
-            }
+                color: "green"
 
+                Rectangle {
+                    id: numberToConvertRectangle
+                    anchors.fill: numberToConvertRectangleTxt
+                    color: "blue"
+                    opacity: 0.8
+                    property alias text: numberToConvertRectangleTxt.text
+                }
+
+                //display number to convert
+                GCText {
+                    id: numberToConvertRectangleTxt
+                    height: parent.height
+                    width: parent.width / 3
+                    anchors {
+                        left: numberToConvertRectangle.left
+                        top: numberToConvertRectangle.top
+                    }
+                    opacity: numberToConvertRectangle.opacity
+                    //z: instruction.z
+                    fontSize: background.vert ? regularSize : smallSize
+                    color: "white"
+                    style: Text.Outline
+                    styleColor: "black"
+                    horizontalAlignment: Text.AlignHCenter
+                    wrapMode: TextEdit.WordWrap
+                }
+
+                ProgressBar {
+                    id: progressBar
+                    height: parent.height
+                    width: parent.width / 3
+
+                    property int percentage: 0
+
+                    maximumValue: 100
+                    visible: true //!items.isTutorialMode
+                    anchors {
+                        bottom: parent.bottom
+                        right: parent.right
+                        rightMargin: 40
+                    }
+
+                    GCText {
+                        anchors.centerIn: parent
+
+                        fontSize: mediumSize
+                        font.bold: true
+                        color: "black"
+                        //: The following translation represents percentage.
+                        text: qsTr("%1%").arg(parent.value)
+                        z: 2
+                    }
+                }
+            }
 
 
             Rectangle {
@@ -174,12 +190,30 @@ ActivityBase {
 
                 width: mainZoneArea.width
                 height: mainZoneArea.height / 10
-                anchors.top: numberToConvertRectangle.bottom
+                anchors.top: topBanner.bottom
                 anchors.left: parent.left
                 anchors.right: parent.right
 
+                GCText {
+                    id: numberClassHeadersRectangleAdvice
+                    height: parent.height
+                    width: parent.width
+                    anchors {
+                        left: parent.left
+                        top: parent.top
+                    }
+                    opacity: visualModel.count === 0 ? 1 : 0
+                    fontSize: background.vert ? regularSize : smallSize
+                    color: "grey"
+                    style: Text.Outline
+                    styleColor: "black"
+                    horizontalAlignment: Text.AlignHCenter
+                    wrapMode: TextEdit.WordWrap
+                    text: qsTr("Drag here the class numbers")
+                }
+
                 ListView {
-                       id: listviewid
+                       id: classNameListView
 
                        anchors { fill: parent; margins: 2 }
                        model: visualModel
@@ -188,21 +222,15 @@ ActivityBase {
                        spacing: 4
                        cacheBuffer: 50
                  }
+
+                DelegateModel {
+                    id: visualModel
+
+                    model: numberClassListModel
+                    delegate: nnumberClassHeaderElement //Qt.createComponent("NumberClassHeaderElement.qml") //ask johnny for some help there
+                }
             }
 
-            DelegateModel {
-                id: visualModel
-
-                model: numberClassListModel
-                delegate: nnumberClassHeaderElement
-            }
-
-     /*       NumberClassHeaderElement {
-                id: numberClassHeaderElement
-            } */
-
-
-            // ask johnny why source.delegate is not seen when defined in a own file
             Component {
                 id: nnumberClassHeaderElement
 
@@ -211,17 +239,13 @@ ActivityBase {
 
                     property bool held: false
 
-                   // anchors { top: numberClassHeaders.top; bottom: numberClassHeaders.bottom }
-
                     width: mainZoneArea.width / numberClassListModel.count
                     height: numberClassHeaders.height
 
                     drag.target: held ? content : undefined
-                //    drag.axis: Drag.XAxis
+                    drag.axis: Drag.XAxis
 
-                    onPressAndHold: {
-                        held = true
-                    }
+                    onPressed: held = true
                     onReleased: {
                         console.log("position on release")
                         console.log("content: " + content.x)
@@ -236,7 +260,6 @@ ActivityBase {
                         held = false
                     }
 
-
                     Rectangle {
                         id: content
 
@@ -248,7 +271,7 @@ ActivityBase {
                         width: mainZoneArea.width / numberClassListModel.count
                         height: numberClassHeaders.height / 2
                         border.width: 1
-                        border.color: "lightsteelblue"
+                        border.color: numberClassListModel.get(index).misplaced === true ? "red" : "lightsteelblue"
                         color: dragArea.held ? "lightsteelblue" : "white"
                         Behavior on color { ColorAnimation { duration: 100 } }
                         radius: 2
@@ -276,17 +299,14 @@ ActivityBase {
                             color: "black"
                             verticalAlignment: Text.AlignVCenter
                             horizontalAlignment: Text.AlignHCenter
-                            text: numberClassListModel.get(index).name
+                            text: numberClassListModel.get(index).name   //here is there a problem of sync to be done?
                             z: 100
                         }
-
                     }
 
                     DropArea {
                         anchors { fill: parent; margins: 10 }
-
                         onEntered: {
-
                             console.log("entered")
                             visualModel.items.move(
                                     drag.source.DelegateModel.itemsIndex,
@@ -331,11 +351,6 @@ ActivityBase {
 
         ListModel {
             id: numberClassListModel
-        }
-
-
-        ListModel {
-            id: listModel
         }
 
 
@@ -394,6 +409,7 @@ ActivityBase {
         }
 
 
+
         //dragable weights list (leftwidget)
         Rectangle {
             id: leftWidget
@@ -446,9 +462,7 @@ ActivityBase {
                             onPressed: okButton.opacity = 0.6
                             onReleased: okButton.opacity = 1
                             onClicked: {
-                                background.checkAnswer()
-                                Activity.testModel()
-
+                                Activity.checkAnswer()
                             }
                         }
                     }
@@ -583,10 +597,6 @@ ActivityBase {
 
         Bonus {
             id: bonus
-            Component.onCompleted: {
-                win.connect(Activity.nextSubLevel)
-            }
-            onStop: background.finished = false
         }
 
         Score {

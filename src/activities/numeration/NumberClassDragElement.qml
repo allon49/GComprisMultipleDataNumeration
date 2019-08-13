@@ -74,9 +74,6 @@ Rectangle {
             //set the initial position
             numberClassDragElement.lastX = numberClassDragElement.x
             numberClassDragElement.lastY = numberClassDragElement.y
-            numberClassDragElement.lastZ = numberClassDragElement.z
-            numberClassDragElement.z = 100000
-            console.log("moving left element")
         }
 
         onReleased: {
@@ -84,9 +81,6 @@ Rectangle {
             //set the element to its initial coordinates
             numberClassDragElement.x = numberClassDragElement.lastX
             numberClassDragElement.y = numberClassDragElement.lastY
-
-
-            numberClassDragElement.z = numberClassDragElement.lastZ
         }
     }
 }

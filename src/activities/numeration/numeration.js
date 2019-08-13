@@ -23,14 +23,16 @@ var currentLevel = 0
 var numberOfLevel = 0
 var items
 
-var savedTotalBoys
+/*var savedTotalBoys
 var savedTotalGirls
 var savedTotalCandies
 var savedPlacedInGirls
 var savedPlacedInBoys
-var savedCurrentCandies
+var savedCurrentCandies*/
 
 var numbersToConvert = []
+var scorePercentage = 0
+var scorePourcentageStep = 0
 var numbersToConvertIndex = 0
 
 
@@ -42,13 +44,12 @@ var classConstant = {
 }
 
 var numberWeightConstant = {
-    "unit": 0,
-    "ten": 1,
-    "hundred":2,
+    "Unit": 0,
+    "Ten": 1,
+    "Hundred":2,
 }
 
-var numberWeightConstantdeb = ["unit","ten","hundred"]
-var numberWeightConstantDeb = ["Unit class","Thousand class","Million class","Milliard class"]
+var numberWeightConstantArray = ["Unit class","Thousand class","Million class","Milliard class"]
 var classNamesArray = {}
 
 function createNumberClasses() {
@@ -84,15 +85,29 @@ function writeClassNameValue(className, numberWeightKey, rowIndex, numberValue) 
     console.log("numberWeightKey: " + numberWeightKey)
     console.log("writeClassNameValue: classNamesArray["+className+"]["+numberWeightConstant[numberWeightKey] +"]["+rowIndex+"] = "+numberValue);
     classNamesArray[classConstant[className]][numberWeightConstant[numberWeightKey]][rowIndex] = numberValue
-    readClassNameValues()
+    readNumerationTableEnteredValue()
 }
 
-function readClassNameValues() {
+
+function resetNumerationTable() {
+    console.log("test reset classname: " + items.numberClassListModel.count)
+    for (var i = 0; i<items.numberClassListModel.count; i++) {
+        console.log("classname: " + items.numberClassListModel.get(i).name)
+        for (var j=0; j<3; j++) {
+            for (var k=0; k<9; k++) {
+                items.numberClassDropAreaRepeater.itemAt(i).numberWeightsDropAreasRepeaterAlias.itemAt(j).numberWeightsDropTiles.numberWeightDropAreaGridRepeater.itemAt(k).numberWeightImageTile.source = ""
+            }
+        }
+    }
+}
+
+
+function readNumerationTableEnteredValue() {
     var enteredValue = 0
     for (var i=0; i<Object.keys(classConstant).length; i++) {
-        console.log("ClassNameKey: " + numberWeightConstantDeb[i])
+        console.log("ClassNameKey: " + numberWeightConstantArray[i])
         for (var j=0; j<3; j++) {
-            console.log("Class + NumberWeightKey: " + numberWeightConstantDeb[i] + " " + numberWeightConstantdeb[j])
+            console.log("Class + NumberWeightKey: " + numberWeightConstantArray[i] + " " + numberWeightConstantArray[j])
             for (var k=0; k<9; k++) {
                 console.log("index: " + k + " " + classNamesArray[i][j][k])
                 enteredValue = enteredValue + classNamesArray[i][j][k]
@@ -100,45 +115,104 @@ function readClassNameValues() {
         }
     }
     console.log("entered value: " + enteredValue)
+    return enteredValue
 }
 
-function readNumerationTableValues() {
-    var numberValueAnswered = 0
-    for (var i=0; i<items.numberClassListModel.count; i++) {
-        console.log("classe name " + items.numberClassListModel.get(i).name)
-        var className = items.numberClassListModel.get(i).name
-        for (var j=0; j<numberClassWeightsKeysArray.length; j++) {
-            for (var k=0; k<9; k++) {
-                console.log("classNamesArray["+className+"]["+numberClassWeightsKeysArray[j]+"]["+k+"]: " + classNamesArray[className][numberClassWeightsKeysArray[j]][k])
-                numberValueAnswered = numberValueAnswered + classNamesArray[className][numberClassWeightsKeysArray[j]][k]
-            }
+
+//check if the answer is correct
+function checkAnswer() {
+
+
+    //check number classes
+
+
+
+    for (var i = 0; i<items.numberClassListModel.count; i++) {
+        console.log("classname: " + items.numberClassListModel.get(i).name)
+        var mirroredIndex = items.numberClassListModel.count - 1 - i
+        console.log("mirroredIndex: " + mirroredIndex)
+        console.log("mirrored classname: " + items.numberClassListModel.get(mirroredIndex).name)
+        console.log("numberWeightConstantArray[i]: " + numberWeightConstantArray[i])
+
+
+
+        if (items.numberClassListModel.get(mirroredIndex).name === numberWeightConstantArray[i]) {
+            console.log("numberWeightConstantArray at the right place " + numberWeightConstantArray[i])
+            items.numberClassListModel.setProperty(i, "misplaced", false)
+        }
+        else
+        {
+            console.log("numberWeightConstantArray nooooooooooooooootttttttttt at the right place " + numberWeightConstantArray[i])
+            items.numberClassListModel.setProperty(i, "misplaced", true)
         }
     }
-    console.log("numberValueAnswere is: " + numberValueAnswered)
-}
 
 
-function testModel() {
-    console.log("testModel")
-    numbersToConvertIndex++
-    items.numberToConvertRectangle.text = numbersToConvert[numbersToConvertIndex]
-
-}
 
 
-function addClassInNumberClassesArray() {
-    numberClassesArray.push(numberClass)
-    for (var i=0; i<9; i++) {
-        numberClassesArray[numberClassIndex][numberWeightType][numberWeightIndex] = 123
+    //check number weights
+    for (i = 0; i<items.numberClassListModel.count; i++) {
+        console.log("check class: " + items.numberClassListModel.get(i).name)
+        for (var j=0; j<3; j++) {
+            console.log("check number weight: ")
+            console.log(items.numberClassDropAreaRepeater.itemAt(i).numberWeightsDropAreasRepeaterAlias.itemAt(j).numberWeightHeaderElement.textAlias)
+            var numberWeightTypeDropped = items.numberClassDropAreaRepeater.itemAt(i).numberWeightsDropAreasRepeaterAlias.itemAt(j).numberWeightHeaderElement.textAlias
+            var numberWeightType = items.numberClassDropAreaRepeater.itemAt(i).numberWeightsDropAreasRepeaterAlias.itemAt(j).numberWeightType
+            console.log("test: " + items.numberClassDropAreaRepeater.itemAt(i).numberWeightsDropAreasRepeaterAlias.itemAt(j).numberWeightType)
+            if (numberWeightTypeDropped !== numberWeightType) {
+                items.numberClassDropAreaRepeater.itemAt(i).numberWeightsDropAreasRepeaterAlias.itemAt(j).numberWeightHeaderElement.border.width = 5
+            }
+            else items.numberClassDropAreaRepeater.itemAt(i).numberWeightsDropAreasRepeaterAlias.itemAt(j).numberWeightHeaderElement.border.width = 0
+        }
+    }
+
+
+
+    //check entered values
+    var enteredValue = readNumerationTableEnteredValue()
+    console.log("enteredValue: " + enteredValue)
+    console.log("numbersToConvert[numbersToConvertIndex]: " + numbersToConvert[numbersToConvertIndex])
+
+    //test if given answer is equal to given number
+    if (enteredValue === parseInt(numbersToConvert[numbersToConvertIndex],10)) {
+        items.bonus.good("flower")
+        scorePercentage = scorePercentage + scorePourcentageStep
+        items.progressBar.value = scorePercentage
+        if (scorePercentage > 97) {
+            nextLevel()
+        }
+        numbersToConvertIndex++
+        items.numberToConvertRectangle.text = numbersToConvert[numbersToConvertIndex]
+        return
+    }
+    else {
+        items.bonus.bad("flower")
+        scorePercentage = scorePercentage - (2 * scorePourcentageStep)
+        if (scorePercentage < 0) scorePercentage = 0
+        items.progressBar.value = scorePercentage
+        var numbersToConvertIndexPlus4 = numbersToConvertIndex + 4
+        //we insert here an random additional value, otherwise there could be an overflow when adding the 2 values
+        //inserted when the user makes an error and that we are at the end of the array
+        if (numbersToConvertIndexPlus4 -1 > numbersToConvert.length ) {
+            var randomValueToInsert = numbersToConvert[Math.floor(Math.random() * numbersToConvert.length)]
+            numbersToConvert.push(randomValueToInsert)
+            console.log("randomValueToInsert: " + randomValueToInsert)
+        }
+        //when user makes an error, the given error is inserted twice, one time to find the good result, a second time to be sure that the answer is understood
+        numbersToConvert.splice(numbersToConvertIndex+2, 0, numbersToConvert[numbersToConvertIndex]);
+        console.log("numbersToConvertindex: " + numbersToConvertIndex)
+        numbersToConvert.splice(numbersToConvertIndex+4, 0, numbersToConvert[numbersToConvertIndex]);
+        console.log("numbersToConvert: " + numbersToConvert)
+        console.log("numbersToConvert length: " + numbersToConvert.length)
+        numbersToConvertIndex++
+        items.numberToConvertRectangle.text = numbersToConvert[numbersToConvertIndex]
+        console.log("numbersToConvert: " + numbersToConvert[numbersToConvertIndex])
     }
 }
+
 
 function removeClassInNumberClassesArray() {
     numberClassesArray.pop(numberClass)
-}
-
-function removeClassInNumberClassesArray(numberClassIndex, numberWeightTyp, numberWeightIndex) {
-    numberClassesArray[numberClassIndex][numberWeightType][numberWeightIndex] = 123
 }
 
 
@@ -146,7 +220,7 @@ function start(items_) {
     items = items_
     currentLevel = 0
     initLevel()
-    numberOfLevel = items.levels.length
+    numberOfLevel = items.levels.length  // ?
 }
 
 function stop() {
@@ -155,15 +229,24 @@ function stop() {
 function initLevel() {
     console.log("start init ")
 
+    resetNumerationTable()
 
     items.bar.level = currentLevel + 1
-    var filename = "resource/board/"+ "board" + currentLevel + ".qml"
-    items.dataset.source = filename
+    var filename = "resource/board/"+ "board" + currentLevel + ".qml"    // ?
+    items.dataset.source = filename  // ?
 
     items.instruction.text = items.levels[currentLevel].objective
     items.instruction.show()
 
+
+
+    console.log("currentLevel: " + currentLevel)
     numbersToConvert = items.levels[currentLevel].numbers
+    console.log("numbersToConvert: " + numbersToConvert)
+    scorePercentage = 0
+    items.progressBar.value = scorePercentage
+    numbersToConvertIndex = 0
+    scorePourcentageStep = Math.round((100 / numbersToConvert.length))
 
     items.numberToConvertRectangle.text = numbersToConvert[numbersToConvertIndex]
 
@@ -172,14 +255,14 @@ function initLevel() {
 
     classNamesArray = createNumberClasses.call();
 
-    console.log("level length: " + items.dataset.item.levels.length)
+
 
     console.log("stop init ")
 
 }
 
 
-function setUp() {
+/*function setUp() {
     var levelData = items.dataset.item
 
     // use board levels
@@ -235,10 +318,10 @@ function setUp() {
         items.instruction.text += qsTr("Then equally split %n pieces of candy between them.", "Third part of Place %n boy(s) and %n girl(s) in the center. Then equally split %n pieces of candy between them.", items.totalCandies);
 
         items.background.showCount = false
-        items.nbSubLevel = 5
+
 
         // depending on the levels configuration, add candies from start in a child rectangle
-        if (levelData.levels[0].alreadyPlaced == false) {
+        if (levelData.levels[0].alreadyPlaced === false) {
             items.background.placedInGirls = 0
             items.background.placedInBoys = 0
             items.background.currentCandies = 0
@@ -264,77 +347,9 @@ function setUp() {
         saveVariables()
     }
     resetBoard()
-}
+}*/
 
 
-function resetBoard() {
-    items.background.currentGirls = 0
-    items.background.currentBoys = 0
-    items.background.resetCandy()
-    items.background.finished = false
-
-    items.acceptCandy = false
-    items.instruction.opacity = 1
-    items.listModel.clear()
-
-    items.girlWidget.current = 0
-    items.girlWidget.canDrag = true
-    items.girlWidget.element.opacity = 1
-
-    items.boyWidget.current = 0
-    items.boyWidget.canDrag = true
-    items.boyWidget.element.opacity = 1
-
-    items.candyWidget.canDrag = true
-    items.candyWidget.element.opacity = 1
-    if (items.totalCandies - items.background.currentCandies == 0)
-        items.candyWidget.element.opacity = 0.6
-
-    items.basketWidget.canDrag = true
-}
-
-function saveVariables() {
-    savedTotalBoys = items.totalBoys
-    savedTotalGirls = items.totalGirls
-    savedTotalCandies = items.totalCandies
-    savedPlacedInGirls = items.background.placedInGirls
-    savedPlacedInBoys = items.background.placedInBoys
-    savedCurrentCandies = items.background.currentCandies
-}
-
-function loadVariables() {
-    items.totalBoys = savedTotalBoys
-    items.totalGirls = savedTotalGirls
-    items.totalCandies = savedTotalCandies
-    items.background.placedInGirls = savedPlacedInGirls
-    items.background.placedInBoys = savedPlacedInBoys
-    items.background.currentCandies = savedCurrentCandies
-}
-
-function reloadRandom() {
-    if (currentLevel < 7) {
-        initLevel()
-    }
-    else {
-        loadVariables()
-        resetBoard()
-
-        items.background.rest = items.totalCandies -
-                Math.floor(items.totalCandies / items.totalChildren) * (items.totalBoys+items.totalGirls)
-        items.background.showCount = false
-        items.basketWidget.element.opacity = 1
-    }
-}
-
-function nextSubLevel() {
-    items.currentSubLevel ++
-    if (items.currentSubLevel === items.nbSubLevel) {
-        nextLevel()
-    }
-    else {
-        setUp()
-    }
-}
 
 function nextLevel() {
     if(numberOfLevel <= ++currentLevel) {

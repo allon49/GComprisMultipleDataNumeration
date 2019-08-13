@@ -30,22 +30,22 @@ Dataset {
          "level" : "1",
          "objective" : qsTr("Drag the number weights in the right cells to create numbers up to 9"),
          "numbers" : [
-            "4",
-            "2",
             "1",
             "2",
+            "3"
+/*            "4",
+            "5",
+            "6",
             "7",
             "8",
-            "5",
             "9",
-            "3",
-            "6"
+            "10"*/
          ]
       },
       {
          "level" : "2",
          "objective" : qsTr("Drag the number weights in the right cells to create numbers up to 20."),
-         "words" : [
+         "numbers" : [
             "14",
             "2",
             "11",
@@ -61,7 +61,7 @@ Dataset {
       {
          "level" : "3",
          "objective" : qsTr("Drag the number weights in the right cells to create numbers up to 40"),
-         "words" : [
+         "numbers" : [
             "14",
             "2",
             "22",
@@ -77,7 +77,7 @@ Dataset {
       {
          "level" : "4",
          "objective" : qsTr("Drag the number weights in the right cells to create numbers up to 60"),
-         "words" : [
+         "numbers" : [
             "54",
             "23",
             "22",
@@ -93,7 +93,7 @@ Dataset {
       {
          "level" : "5",
          "objective" : qsTr("Drag the number weights in the right cells to create numbers up to 99"),
-         "words" : [
+         "numbers" : [
             "64",
             "13",
             "82",

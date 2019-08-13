@@ -41,29 +41,28 @@ Rectangle {
     property alias numberWeightsDropAreasRepeaterAlias: numberWeightsDropAreasRepeater
     property alias numberWeightHeadersModelAlias: numberWeightHeadersModel
 
+
     width: parent.width
     height: parent.height - numberClassHeaders.height
 
     color: "blue"
 
-    property string test: "tttt"
-
     ListModel {
         id: numberWeightHeadersModel
 
         ListElement {
-            weightType: "hundred"
-            name: "?"
+            weightType: "Hundred"
+            name: "Drag number weight here"
             weightElementDroppedName: ""
         }
         ListElement {
-            weightType: "ten"
-            name: "?"
+            weightType: "Ten"
+            name: "Drag number weight here"
             weightElementDroppedName: ""
         }
         ListElement {
-            weightType: "unit"
-            name: "?"
+            weightType: "Unit"
+            name: "Drag number weight here"
             weightElementDroppedName: ""
         }
     }
@@ -80,15 +79,15 @@ Rectangle {
             id: numberWeightsDropAreasRepeater
             model: numberWeightHeadersModel
 
-//            property string classNameStr: numberWeightHeadersModel.name
-
 
             Rectangle {
                 id: numberWeightDropAreaRectangle
 
                 property string numberWeightDropAreaRectangleIndex: index
                 property string numberWeightKey: weightType
-
+                property alias numberWeightsDropTiles: numberWeightsDropTiles
+                property alias numberWeightHeaderElement: numberWeightHeaderElement
+                property string numberWeightType: weightType
 
                 color: "lightsteelblue"
 
@@ -96,8 +95,6 @@ Rectangle {
                 Layout.fillHeight: true
                 Layout.minimumWidth: 50
                 Layout.preferredWidth: 100
-
-
 
                 NumberWeightHeaderElement {
                     id: numberWeightHeaderElement
@@ -156,6 +153,8 @@ Rectangle {
                 Rectangle {
                     id: numberWeightsDropTiles
 
+                    property alias numberWeightDropAreaGridRepeater: numberWeightDropAreaGridRepeater
+
                     anchors.top: numberWeightHeaderElement.bottom
                     width: parent.width
                     height: parent.height - numberWeightHeaderElement.height
@@ -180,6 +179,8 @@ Rectangle {
 
 
                             DropArea {
+
+                                property alias numberWeightImageTile: numberWeightImageTile
 
                                 keys: "numberWeightKey"
 
@@ -218,6 +219,8 @@ Rectangle {
                                     //Activity.writeClassNameValue(className, numberClassWeightIndex, index, numberValue)
                                     Activity.writeClassNameValue(className, numberWeightKey, index, numberValue)
 
+
+
                                 }
 
 
@@ -225,7 +228,6 @@ Rectangle {
                                     id: numberWeightRectangleTile
 
                                     property string src
-
 
                                     //color: "red"
                                     border.color: "black"
@@ -259,6 +261,10 @@ Rectangle {
                                                  anchors.fill: parent
                                                  onClicked: {
                                                      numberWeightImageTile.source = ""
+                                                     Activity.writeClassNameValue(className, numberWeightKey, index, 0)
+                                                     console.log("ClassName: " + className + "numberWeightKey: " + numberWeightKey + "index: : " + index)
+                                                     console.log("resetNumerationTable")
+                                                     Activity.resetNumerationTable()
                                                  }
                                              }
                                         }

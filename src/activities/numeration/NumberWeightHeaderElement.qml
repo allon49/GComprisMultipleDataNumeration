@@ -35,8 +35,13 @@ Rectangle {
 
     property Item dragParent
 
+    property alias textAlias: numberWeightHeaderCaption.text
+
     Drag.active: numberWeightHeaderElementMouseArea.drag.active
     Drag.keys: "NumberWeightHeaderKey"
+
+    border.color: "red"
+    border.width: 0
 
     function updateNumberWeightHeaderCaption() {
         numberWeightHeaderCaption.text = numberWeightHeadersModel.get(index).name
@@ -47,12 +52,17 @@ Rectangle {
         id: numberWeightHeaderCaption
 
         anchors.fill: parent
+        anchors.topMargin: 10
+        anchors.bottomMargin: 10   //find a way to fit the text without truncating it
+        anchors.leftMargin: 10
+        anchors.rightMargin: 10
         anchors.bottom: parent.bottom
         fontSizeMode: Text.Fit
         color: "white"
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter
-        text: numberWeightHeadersModel.get(index).name
+        text: numberWeightHeadersModel.get(index).name  // here error to be corrected  TypeError: Cannot read property 'name' of undefined
+        wrapMode: TextEdit.WordWrap
     }
 
     MouseArea {
@@ -60,7 +70,7 @@ Rectangle {
         anchors.fill: parent
 
         onPressed: {
-            numberWeightHeadersModel.setProperty(index,"name","?")
+            numberWeightHeadersModel.setProperty(index,"name","?")   //?
             updateNumberWeightHeaderCaption()
         }
 
