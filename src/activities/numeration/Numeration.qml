@@ -467,60 +467,57 @@ ActivityBase {
                         }
                     }
 
+                    // numbers classes drag elements
+                    Repeater {
+                        model: Activity.classNamesConstantArray
 
-                    NumberClassDragElement {
-                        id: unitsClassDragElement
-                        name: qsTr("Unit class")
-                        color: "black"
-                        Drag.keys: "NumberClassKey"
+                        NumberClassDragElement {
+                            id: classDragElement
+                            name: Activity.numberClassesObj[modelData]["name"]
+                            color: Activity.numberClassesObj[modelData]["color"]
+                            Drag.keys: Activity.numberClassesObj[modelData]["dragkeys"]
+                        }
                     }
 
-                    NumberClassDragElement {
-                        id: thousandsClassDragElement
-                        name: qsTr("Thousand class")
-                        color: "black"
-                        Drag.keys: "NumberClassKey"
+                    // numbers weights drag elements
+                    Repeater {
+                        model: Activity.numberWeightsConstantArray
+
+                        NumberClassDragElement {
+                            id: weightDragElement
+                            name: Activity.numberWeightsObj[modelData]["name"]
+                            color: Activity.numberWeightsObj[modelData]["color"]
+                            Drag.keys: Activity.numberWeightsObj[modelData]["dragkeys"]
+                        }
                     }
 
-                    NumberClassDragElement {
-                        id: millionsClassDragElement
-                        name: qsTr("Million class")
-                        color: "black"
-                        Drag.keys: "NumberClassKey"
+                    // numbers weights drag elements
+                    Repeater {
+                        model: Activity.numberWeightsConstantArray
+
+                        NumberClassDragElement {
+                            id: weightDragElement
+                            name: Activity.numberWeightsObj[modelData]["name"]
+                            color: Activity.numberWeightsObj[modelData]["color"]
+                            Drag.keys: Activity.numberWeightsObj[modelData]["dragkeys"]
+                        }
                     }
 
-                    NumberClassDragElement {
-                        id: milliardsClassDragElement
-                        name: qsTr("Milliard class")
-                        color: "black"
-                        Drag.keys: "NumberClassKey"
+                    // numbers weights components drag elements
+                    Repeater {
+                        model: Activity.numberWeightComponentConstantArray
+
+                        NumberWeightDragElement {
+                            id: weightComponentDragElement
+                            name: Activity.numberWeightComponentObj[modelData]["name"]
+                            imageName: Activity.numberWeightComponentObj[modelData]["imageName"]
+                            Drag.keys: Activity.numberWeightComponentObj[modelData]["dragkeys"]
+                        }
                     }
 
-                    NumberClassDragElement {
-                        id: unitDragElement
-                        name: qsTr("Unit")
-                   //     caption: qsTr("Unit")
-                        color: "darkred"
-                        Drag.keys: "numberWeightHeaderKey"
-                    }
 
-                    NumberClassDragElement {
-                        id: tenDragElement
-                        name: qsTr("Ten")
-                     //   caption: qsTr("Ten")
-                        color: "darkred"
-                        Drag.keys: "numberWeightHeaderKey"
-                    }
 
-                    NumberClassDragElement {
-                        id: hundredDragElement
-                        name: qsTr("Hundred")
-                     //   caption: qsTr("Hundred")
-                        color: "darkred"
-                        Drag.keys: "numberWeightHeaderKey"
-                    }
-
-                    NumberWeightDragElement {
+/*                    NumberWeightDragElement {
                         id: unitWeightDragElement
                         name: "unity"
                         caption: ""
@@ -567,7 +564,7 @@ ActivityBase {
                         caption: qsTr("100 000")
                         weightValue: 100000
                         Drag.keys: "numberWeightKey"
-                    }
+                    }*/
                 }
             }
         }

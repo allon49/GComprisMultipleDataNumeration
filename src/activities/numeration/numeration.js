@@ -23,18 +23,11 @@ var currentLevel = 0
 var numberOfLevel = 0
 var items
 
-/*var savedTotalBoys
-var savedTotalGirls
-var savedTotalCandies
-var savedPlacedInGirls
-var savedPlacedInBoys
-var savedCurrentCandies*/
-
 var numbersToConvert = []
 var scorePercentage = 0
 var scorePourcentageStep = 0
 var numbersToConvertIndex = 0
-
+var classNamesArray = {}
 
 var classConstant = {
     "Unit class": 0,
@@ -46,11 +39,98 @@ var classConstant = {
 var numberWeightConstant = {
     "Unit": 0,
     "Ten": 1,
-    "Hundred":2,
+    "Hundred":2
 }
 
-var numberWeightConstantArray = ["Unit class","Thousand class","Million class","Milliard class"]
-var classNamesArray = {}
+var classNamesConstantArray = ["Unit class","Thousand class","Million class","Milliard class"]
+
+var numberClassesObj = {
+    "Unit class": { name: qsTr("Unit class"), color: "black", dragkeys: "NumberClassKey"},
+    "Thousand class": { name: qsTr("Thousand class"), color: "black", dragkeys: "NumberClassKey"},
+    "Million class": { name: qsTr("Million class"), color: "black", dragkeys: "NumberClassKey"},
+    "Milliard class": { name: qsTr("Milliard class"), color: "black", dragkeys: "NumberClassKey"}
+}
+
+var numberWeightsConstantArray = ["Unit","Ten","Hundred"]
+
+var numberWeightsObj = {
+    "Unit": { name: qsTr("Unit"), color: "darkred", dragkeys: "numberWeightHeaderKey"},
+    "Ten": { name: qsTr("Ten"), color: "darkred", dragkeys: "numberWeightHeaderKey"},
+    "Hundred": { name: qsTr("Hundred"), color: "darkred", dragkeys: "numberWeightHeaderKey"},
+}
+
+var numberWeightComponentConstantArray = ["Unit","Ten","Hundred","Thousand","Ten","TenThousand",
+                                          "OneHundredThousand","OneMillion","TenMillion","OneHundredMillion",
+                                          "OneMilliard","TenMilliard","OneHundredMilliard"]
+
+var numberWeightComponentObj = {
+    "Unit": { name: qsTr("Unit"), caption: "", imageName: "unity.svg", weightValue: "", dragkeys: "numberWeightKey" },
+    "Ten": { name: qsTr("Unit"), caption: "", imageName: "ten.svg", weightValue: "", dragkeys: "numberWeightKey" },
+    "Hundred": { name: qsTr("Unit"), caption: "", imageName: "hundred.svg", weightValue: "", dragkeys: "numberWeightKey" },
+    "Thousand": { name: qsTr("Unit"), caption: "", imageName: "", weightValue: "", dragkeys: "numberWeightKey" },
+    "TenThousand": { name: qsTr("Unit"), caption: "10 000", imageName: "", weightValue: "", dragkeys: "numberWeightKey" },
+    "OneHundredThousand": { name: qsTr("Unit"), caption: "100 000", imageName: "", weightValue: "", dragkeys: "numberWeightKey" },
+    "OneMillion": { name: qsTr("Unit"), caption: "1 000 000", imageName: "", weightValue: "", dragkeys: "numberWeightKey" },
+    "TenMillion": { name: qsTr("Unit"), caption: "10 000 000", imageName: "", weightValue: "", dragkeys: "numberWeightKey" },
+    "OneHundredMillion": { name: qsTr("Unit"), caption: "1000 000 000", imageName: "", weightValue: "", dragkeys: "numberWeightKey" },
+    "OneMilliard": { name: qsTr("Unit"), caption: "1 000 000 000", imageName: "", weightValue: "", dragkeys: "numberWeightKey" },
+    "TenMilliard": { name: qsTr("Unit"), caption: "10 000 000 000", imageName: "", weightValue: "", dragkeys: "numberWeightKey" },
+    "OneHundredMilliard": { name: qsTr("Unit"), caption: "100 000 000 000", imageName: "", weightValue: "", dragkeys: "numberWeightKey" },
+}
+
+
+
+/*NumberWeightDragElement {
+    id: unitWeightDragElement
+    name: "unity"
+    caption: ""
+    weightValue: 1
+    Drag.keys: "numberWeightKey"
+
+}
+
+NumberWeightDragElement {
+    id: tenWeightDragElement
+    name: "ten"
+    caption: ""
+    weightValue: 10
+    Drag.keys: "numberWeightKey"
+}
+
+NumberWeightDragElement {
+    id: hundredWeightDragElement
+    name: "hundred"
+    caption: ""
+    weightValue: 100
+    Drag.keys: "numberWeightKey"
+}
+
+NumberWeightDragElement {
+    id: thousandWeightDragElement
+    name: "weightCaption"
+    caption: qsTr("1 000")
+    weightValue: 1000
+    Drag.keys: "numberWeightKey"
+}
+
+NumberWeightDragElement {
+    id: tenthousandWeightDragElement
+    name: "weightCaption"
+    caption: qsTr("10 000")
+    weightValue: 10000
+    Drag.keys: "numberWeightKey"
+}
+
+NumberWeightDragElement {
+    id: onehundredthousandWeightDragElement
+    name: "weightCaption"
+    caption: qsTr("100 000")
+    weightValue: 100000
+    Drag.keys: "numberWeightKey"
+}*/
+
+
+
 
 function createNumberClasses() {
     var numberClasses = [];
@@ -105,9 +185,9 @@ function resetNumerationTable() {
 function readNumerationTableEnteredValue() {
     var enteredValue = 0
     for (var i=0; i<Object.keys(classConstant).length; i++) {
-        console.log("ClassNameKey: " + numberWeightConstantArray[i])
+        console.log("ClassNameKey: " + numberWeightsConstantArray[i])
         for (var j=0; j<3; j++) {
-            console.log("Class + NumberWeightKey: " + numberWeightConstantArray[i] + " " + numberWeightConstantArray[j])
+            console.log("Class + NumberWeightKey: " + numberWeightsConstantArray[i] + " " + numberWeightsConstantArray[j])
             for (var k=0; k<9; k++) {
                 console.log("index: " + k + " " + classNamesArray[i][j][k])
                 enteredValue = enteredValue + classNamesArray[i][j][k]
@@ -123,26 +203,27 @@ function readNumerationTableEnteredValue() {
 function checkAnswer() {
 
 
+
+
+
+
     //check number classes
-
-
-
     for (var i = 0; i<items.numberClassListModel.count; i++) {
         console.log("classname: " + items.numberClassListModel.get(i).name)
         var mirroredIndex = items.numberClassListModel.count - 1 - i
         console.log("mirroredIndex: " + mirroredIndex)
         console.log("mirrored classname: " + items.numberClassListModel.get(mirroredIndex).name)
-        console.log("numberWeightConstantArray[i]: " + numberWeightConstantArray[i])
+        console.log("numberWeightsConstantArray[i]: " + numberWeightsConstantArray[i])
 
 
 
-        if (items.numberClassListModel.get(mirroredIndex).name === numberWeightConstantArray[i]) {
-            console.log("numberWeightConstantArray at the right place " + numberWeightConstantArray[i])
+        if (items.numberClassListModel.get(mirroredIndex).name === numberWeightsConstantArray[i]) {
+            console.log("numberWeightsConstantArray at the right place " + numberWeightsConstantArray[i])
             items.numberClassListModel.setProperty(i, "misplaced", false)
         }
         else
         {
-            console.log("numberWeightConstantArray nooooooooooooooootttttttttt at the right place " + numberWeightConstantArray[i])
+            console.log("numberWeightsConstantArray nooooooooooooooootttttttttt at the right place " + numberWeightsConstantArray[i])
             items.numberClassListModel.setProperty(i, "misplaced", true)
         }
     }
