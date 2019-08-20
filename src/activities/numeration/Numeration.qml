@@ -114,7 +114,6 @@ ActivityBase {
             onDropped: {
                 var className = drag.source.name
                 numberClassListModel.append({"name": className, "element_src": drag.source, "misplaced": false})
-                console.log("drag.source" + drag.source)
                 numberClassListModel.get(numberClassListModel.count-1).element_src.dragEnabled = false
             }
 
@@ -247,13 +246,8 @@ ActivityBase {
 
                     onPressed: held = true
                     onReleased: {
-                        console.log("position on release")
-                        console.log("content: " + content.x)
-                        console.log("leftWidget.width: " + leftWidget.width)
-
                         if ((content.x < leftWidget.width) && held)  //don't understand why I have a content.x = 0 when held is not true, this point needs to be cleared
                         {
-                            console.log("release scr: " + numberClassListModel.get(index).element_src)
                             numberClassListModel.get(index).element_src.dragEnabled = true
                             numberClassListModel.remove(index,1)
                         }
@@ -299,7 +293,7 @@ ActivityBase {
                             color: "black"
                             verticalAlignment: Text.AlignVCenter
                             horizontalAlignment: Text.AlignHCenter
-                            text: numberClassListModel.get(index).name   //here is there a problem of sync to be done?
+                            text: numberClassListModel.get(index).name   //here there a problem when removing a number class
                             z: 100
                         }
                     }
@@ -308,14 +302,10 @@ ActivityBase {
                         anchors { fill: parent; margins: 10 }
                         onEntered: {
                             console.log("entered")
-                            visualModel.items.move(
-                                    drag.source.DelegateModel.itemsIndex,
-                                    dragArea.DelegateModel.itemsIndex)
+                            //visualModel.items.move(drag.source.DelegateModel.itemsIndex, dragArea.DelegateModel.itemsIndex)
                                     console.log("drag.source.DelegateModel.itemsIndex : " + drag.source.DelegateModel.itemsIndex)
                                     console.log("dragArea.DelegateModel.itemsIndex : " + dragArea.DelegateModel.itemsIndex)
-                            numberClassListModel.move(
-                                        drag.source.DelegateModel.itemsIndex,
-                                        dragArea.DelegateModel.itemsIndex,1)
+                            numberClassListModel.move(drag.source.DelegateModel.itemsIndex, dragArea.DelegateModel.itemsIndex,1)
                         }
                     }
                 }
@@ -431,7 +421,7 @@ ActivityBase {
                 width: background.height
                 height: leftWidget.width
                 //contentHeight: gridView.height
-                contentHeight: gridView.height * 1.5
+                contentHeight: gridView.height * 1.8   //?
                 contentWidth: leftWidget.width
                 boundsBehavior: Flickable.DragAndOvershootBounds
 
@@ -484,19 +474,7 @@ ActivityBase {
                         model: Activity.numberWeightsConstantArray
 
                         NumberClassDragElement {
-                            id: weightDragElement
-                            name: Activity.numberWeightsObj[modelData]["name"]
-                            color: Activity.numberWeightsObj[modelData]["color"]
-                            Drag.keys: Activity.numberWeightsObj[modelData]["dragkeys"]
-                        }
-                    }
-
-                    // numbers weights drag elements
-                    Repeater {
-                        model: Activity.numberWeightsConstantArray
-
-                        NumberClassDragElement {
-                            id: weightDragElement
+                            id: numberClassDragElement
                             name: Activity.numberWeightsObj[modelData]["name"]
                             color: Activity.numberWeightsObj[modelData]["color"]
                             Drag.keys: Activity.numberWeightsObj[modelData]["dragkeys"]
@@ -512,59 +490,10 @@ ActivityBase {
                             name: Activity.numberWeightComponentObj[modelData]["name"]
                             imageName: Activity.numberWeightComponentObj[modelData]["imageName"]
                             Drag.keys: Activity.numberWeightComponentObj[modelData]["dragkeys"]
+                            weightValue: Activity.numberWeightComponentObj[modelData]["weightValue"]
+                            caption: Activity.numberWeightComponentObj[modelData]["caption"]
                         }
                     }
-
-
-
-/*                    NumberWeightDragElement {
-                        id: unitWeightDragElement
-                        name: "unity"
-                        caption: ""
-                        weightValue: 1
-                        Drag.keys: "numberWeightKey"
-
-                    }
-
-                    NumberWeightDragElement {
-                        id: tenWeightDragElement
-                        name: "ten"
-                        caption: ""
-                        weightValue: 10
-                        Drag.keys: "numberWeightKey"
-                    }
-
-                    NumberWeightDragElement {
-                        id: hundredWeightDragElement
-                        name: "hundred"
-                        caption: ""
-                        weightValue: 100
-                        Drag.keys: "numberWeightKey"
-                    }
-
-                    NumberWeightDragElement {
-                        id: thousandWeightDragElement
-                        name: "weightCaption"
-                        caption: qsTr("1 000")
-                        weightValue: 1000
-                        Drag.keys: "numberWeightKey"
-                    }
-
-                    NumberWeightDragElement {
-                        id: tenthousandWeightDragElement
-                        name: "weightCaption"
-                        caption: qsTr("10 000")
-                        weightValue: 10000
-                        Drag.keys: "numberWeightKey"
-                    }
-
-                    NumberWeightDragElement {
-                        id: onehundredthousandWeightDragElement
-                        name: "weightCaption"
-                        caption: qsTr("100 000")
-                        weightValue: 100000
-                        Drag.keys: "numberWeightKey"
-                    }*/
                 }
             }
         }
@@ -585,7 +514,7 @@ ActivityBase {
             onPreviousLevelClicked: Activity.previousLevel()
             onNextLevelClicked: Activity.nextLevel()
             onHomeClicked: activity.home()
-            onReloadClicked: Activity.reloadRandom()
+            onReloadClicked: Activity.reloadRandom()    //?
             onConfigClicked: {
                 dialogActivityConfig.active = true
                 displayDialog(dialogActivityConfig)
@@ -596,16 +525,6 @@ ActivityBase {
             id: bonus
         }
 
-        Score {
-            anchors {
-                left: undefined
-                right: leftWidget.right
-                bottom: background.vert ? bar.top : leftWidget.bottom
-                margins: 3 * ApplicationInfo.ratio
-            }
-            width: 100
-            height: 100
-        }
     }
 
 }

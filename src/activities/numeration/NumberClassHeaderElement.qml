@@ -1,7 +1,7 @@
  
 /* GCompris - NumberClassHeaderElement.qml
  *
- * Copyright (C) 2016 Stefan Toncu <stefan.toncu29@gmail.com>
+ * Copyright (C) 2019 Emmanuel Charruau <echarruau@gmail.com>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
@@ -41,13 +41,8 @@ Item {
             held = true
         }
         onReleased: {
-            console.log("position on release")
-            console.log("content: " + content.x)
-            console.log("leftWidget.width: " + leftWidget.width)
-
             if ((content.x < leftWidget.width) && held)  //don't understand why I have a content.x = 0 when held is not true, this point needs to be cleared
             {
-                console.log("release scr: " + numberClassListModel.get(index).element_src)
                 numberClassListModel.get(index).element_src.dragEnabled = true
                 numberClassListModel.remove(index,1)
             }

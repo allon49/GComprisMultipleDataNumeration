@@ -1,6 +1,6 @@
 /* GCompris - NumberClassDropArea.qml
  *
- * Copyright (C) 2016 Stefan Toncu <stefan.toncu29@gmail.com>
+ * Copyright (C) 2019 Emmanuel Charruau <echarruau@gmail.com>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
@@ -198,14 +198,12 @@ Rectangle {
                                 onDropped: {
                                     console.log("dropped number in: " + index)
 
-                                    numberWeightImageTile.source = "qrc:/gcompris/src/activities/numeration/resource/images/" + drag.source.name + ".svg"
+                                    numberWeightImageTile.source = "qrc:/gcompris/src/activities/numeration/resource/images/" + drag.source.imageName
                                     numberWeightImageTile.caption = drag.source.caption
                                     numberWeightRectangleTile.color = defaultColor
                                     numberWeightItem.weightValue = drag.source.weightValue
 
-
                                     var numberClassWeightIndex = numberWeightDropAreaRectangleIndex
-
 
                                     console.log("numberWeightKey: " + numberWeightKey)
 
@@ -216,11 +214,7 @@ Rectangle {
                                     console.log("index: " + index)
                                     console.log("numberValue: " + numberValue)
 
-                                    //Activity.writeClassNameValue(className, numberClassWeightIndex, index, numberValue)
                                     Activity.writeClassNameValue(className, numberWeightKey, index, numberValue)
-
-
-
                                 }
 
 
@@ -245,7 +239,6 @@ Rectangle {
 
                                         anchors.fill: parent
 
-
                                         Image {
                                             id: numberWeightImageTile
 
@@ -263,8 +256,6 @@ Rectangle {
                                                      numberWeightImageTile.source = ""
                                                      Activity.writeClassNameValue(className, numberWeightKey, index, 0)
                                                      console.log("ClassName: " + className + "numberWeightKey: " + numberWeightKey + "index: : " + index)
-                                                     console.log("resetNumerationTable")
-                                                     Activity.resetNumerationTable()
                                                  }
                                              }
                                         }
@@ -279,7 +270,6 @@ Rectangle {
                                             verticalAlignment: Text.AlignVCenter
                                             horizontalAlignment: Text.AlignHCenter
                                             text: numberWeightImageTile.caption
-
                                         }
                                     }
                                 }
@@ -291,4 +281,3 @@ Rectangle {
         }
     }
 }
-

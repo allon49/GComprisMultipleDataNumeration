@@ -1,6 +1,6 @@
 /* GCompris - NumberClassDragElement.qml
  *
- * Copyright (C) 2016 Stefan Toncu <stefan.toncu29@gmail.com>
+ * Copyright (C) 2019 Emmanuel Charruau <echarruau@gmail.com>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
@@ -26,19 +26,12 @@ Rectangle {
 
     width: parent.width - parent.width/5
     height: parent.height / 15
-    z: 1000
 
-    //initial position of the element
-    //(these vars are assigned to element after release of click mouse)
     property int lastX
     property int lastY
     property int lastZ
-    property string src
-    property int current: 0
-    property int total: 0
+
     property string name
-    //property bool canDrag: true
-    property string availableItems
     property bool dragEnabled: true
 
     Drag.active: numberClassDragElementMouseArea.drag.active
@@ -58,7 +51,6 @@ Rectangle {
         text: name
     }
 
-
     MouseArea {
         id: numberClassDragElementMouseArea
         anchors.fill: parent
@@ -67,7 +59,6 @@ Rectangle {
         drag.axis: numberClassDragElement.x < parent.width ? Drag.XAxis : Drag.XAndYAxis
         Drag.hotSpot.x: width / 2
         Drag.hotSpot.y: height / 2
-
 
         onPressed: {
             instruction.hide()

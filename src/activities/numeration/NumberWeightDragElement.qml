@@ -1,6 +1,6 @@
 /* GCompris - NumberWeightDragElement.qml
  *
- * Copyright (C) 2016 Stefan Toncu <stefan.toncu29@gmail.com>
+ * Copyright (C) 2019 Emmanuel Charruau <echarruau@gmail.com>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
@@ -33,9 +33,10 @@ Rectangle {
     property bool canDrag: true
     property string caption
     property string src
+    property int weightValue
 
     // callback defined in each numberWeightDragElement called when we release the element in background   //?
-    property var releaseElement: null
+    property var releaseElement: null     //?
 
     width: parent.width - parent.width/5
     height: parent.height / 15
@@ -48,21 +49,22 @@ Rectangle {
 
     Image {
         id: numberWeightDragElementImage
-        sourceSize.width: items.cellSize * 1.5
-        sourceSize.height: items.cellSize * 1.5
+        sourceSize.width: parent.width
+        sourceSize.height: parent.height
         source: numberWeightDragElement.src
+        anchors.fill: parent
 
         //number of available items
         GCText {
             id: numberWeightDragElementCaption
 
             anchors.fill: parent
-            anchors.bottom: parent.bottom
+            anchors.margins: 10
             fontSizeMode: Text.Fit
             color: "white"
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
-            text: caption
+            text: numberWeightDragElement.caption
         }
     }
 
@@ -74,13 +76,19 @@ Rectangle {
             //set the initial position
             numberWeightDragElement.lastX = numberWeightDragElement.x
             numberWeightDragElement.lastY = numberWeightDragElement.y
-            console.log("moving left element")
+            numberWeightDragElement.border.width = 0
+        }
+
+        onClicked: {
+            numberWeightDragElement.border.color = "red"
+            numberWeightDragElement.border.width = 1
+
         }
 
         drag.target: numberWeightDragElement
         drag.axis: numberWeightDragElement.x < parent.width ? Drag.XAxis : Drag.XAndYAxis
-        Drag.hotSpot.x: width/2
-        Drag.hotSpot.y: height/2
+        Drag.hotSpot.x: width
+        Drag.hotSpot.y: height
 
         onReleased: {
             parent.Drag.drop()

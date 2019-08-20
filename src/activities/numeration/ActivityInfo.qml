@@ -1,6 +1,6 @@
 /* GCompris - ActivityInfo.qml
  *
- * Copyright (C) 2018 Your Name <yy@zz.org>
+ * Copyright (C) 2019 Emmanuel Charruau <echarruau@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,13 +21,13 @@ ActivityInfo {
   name: "numeration/Numeration.qml"
   difficulty: 1
   icon: "numeration/numeration.svg"
-  author: "Your Name &lt;yy@zz.org&gt;"
+  author: "Emmanuel Charruau <echarruau@gmail.com>"
   demo: true
   //: Activity title
   title: "Numeration activity"
   //: Help title
   description: ""
-  //intro: "put here in comment the text for the intro voice"
+  //intro: "put here in comment the text for the intro voice"  //?
   //: Help goal
   goal: ""
   //: Help prerequisite
