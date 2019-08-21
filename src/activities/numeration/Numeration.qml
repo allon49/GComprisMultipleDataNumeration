@@ -55,6 +55,8 @@ ActivityBase {
             property alias instruction: instruction
             property alias dataset: dataset
             property alias  numberClassListModel: numberClassListModel
+            property alias numberClassDragListModel: numberClassDragListModel
+            property alias numberWeightDragListModel: numberWeightDragListModel
             property alias leftWidget: leftWidget
             property alias progressBar: progressBar
             property alias numberClassDropAreaRepeater: numberClassDropAreaRepeater
@@ -246,7 +248,7 @@ ActivityBase {
 
                     onPressed: held = true
                     onReleased: {
-                        if ((content.x < leftWidget.width) && held)  //don't understand why I have a content.x = 0 when held is not true, this point needs to be cleared
+                        if ((content.x < leftWidget.width) && held)  //? don't understand why I have a content.x = 0 when held is not true, this point needs to be cleared
                         {
                             numberClassListModel.get(index).element_src.dragEnabled = true
                             numberClassListModel.remove(index,1)
@@ -341,6 +343,14 @@ ActivityBase {
 
         ListModel {
             id: numberClassListModel
+        }
+
+        ListModel {
+            id: numberClassDragListModel
+        }
+
+        ListModel {
+            id: numberWeightDragListModel
         }
 
 
@@ -459,39 +469,30 @@ ActivityBase {
 
                     // numbers classes drag elements
                     Repeater {
-                        model: Activity.classNamesConstantArray
+                        model: numberClassDragListModel
 
                         NumberClassDragElement {
                             id: classDragElement
-                            name: Activity.numberClassesObj[modelData]["name"]
-                            color: Activity.numberClassesObj[modelData]["color"]
-                            Drag.keys: Activity.numberClassesObj[modelData]["dragkeys"]
+
+                            name: model.name
+                            color: model.color
+                            Drag.keys: model.dragkeys
                         }
                     }
 
-                    // numbers weights drag elements
+                    // numbers columns weights and numbers weigths drag elements
                     Repeater {
-                        model: Activity.numberWeightsConstantArray
-
-                        NumberClassDragElement {
-                            id: numberClassDragElement
-                            name: Activity.numberWeightsObj[modelData]["name"]
-                            color: Activity.numberWeightsObj[modelData]["color"]
-                            Drag.keys: Activity.numberWeightsObj[modelData]["dragkeys"]
-                        }
-                    }
-
-                    // numbers weights components drag elements
-                    Repeater {
-                        model: Activity.numberWeightComponentConstantArray
+                        model: numberWeightDragListModel
 
                         NumberWeightDragElement {
                             id: weightComponentDragElement
-                            name: Activity.numberWeightComponentObj[modelData]["name"]
-                            imageName: Activity.numberWeightComponentObj[modelData]["imageName"]
-                            Drag.keys: Activity.numberWeightComponentObj[modelData]["dragkeys"]
-                            weightValue: Activity.numberWeightComponentObj[modelData]["weightValue"]
-                            caption: Activity.numberWeightComponentObj[modelData]["caption"]
+                            name: model.name
+                            imageName: model.imageName
+                            Drag.keys: model.dragkeys
+                            weightValue: model.weightValue
+                            caption: model.caption
+                            color: model.color
+                            selected: model.selected
                         }
                     }
                 }

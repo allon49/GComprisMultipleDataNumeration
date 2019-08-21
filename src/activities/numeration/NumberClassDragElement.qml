@@ -42,7 +42,7 @@ Rectangle {
     GCText {
         id: numberClassElementCaption
 
-        anchors.fill: parent
+        anchors.fill: parent    //? here text does not fit un parent
         anchors.bottom: parent.bottom
         fontSizeMode: Text.Fit
         color: "white"

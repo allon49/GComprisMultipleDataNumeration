@@ -17,15 +17,15 @@
  */
 
 import QtQuick 2.6
-import GCompris 1.0
+import GCompris 1.0    //?
 
 import "../../core"
+
+import "numeration.js" as Activity
 
 Rectangle {
     id: numberWeightDragElement
 
-    //initial position of the element
-    //(these vars are assigned to element after release of click mouse)
     property int lastX
     property int lastY
     property string imageName
@@ -34,6 +34,7 @@ Rectangle {
     property string caption
     property string src
     property int weightValue
+    property bool selected
 
     // callback defined in each numberWeightDragElement called when we release the element in background   //?
     property var releaseElement: null     //?
@@ -42,6 +43,10 @@ Rectangle {
     height: parent.height / 15
 
     color: "transparent"
+    border.color: "red"
+    border.width: selected === true ? 1 : 0
+
+
 
     Drag.active: numberWeightDragElementMouseArea.drag.active
 
@@ -51,7 +56,7 @@ Rectangle {
         id: numberWeightDragElementImage
         sourceSize.width: parent.width
         sourceSize.height: parent.height
-        source: numberWeightDragElement.src
+        source: imageName !== "" ? numberWeightDragElement.src : ""
         anchors.fill: parent
 
         //number of available items
@@ -76,13 +81,15 @@ Rectangle {
             //set the initial position
             numberWeightDragElement.lastX = numberWeightDragElement.x
             numberWeightDragElement.lastY = numberWeightDragElement.y
-            numberWeightDragElement.border.width = 0
         }
 
-        onClicked: {
-            numberWeightDragElement.border.color = "red"
-            numberWeightDragElement.border.width = 1
+        onPositionChanged: {
+            Activity.unselectAllNumberWeightDragElement()
+        }
 
+
+        onClicked: {
+            Activity.selectNumberWeightDragElement(index)
         }
 
         drag.target: numberWeightDragElement

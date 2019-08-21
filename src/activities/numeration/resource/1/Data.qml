@@ -29,6 +29,9 @@ Dataset {
       {
          "level" : "1",
          "objective" : qsTr("Drag the number weights in the right cells to create numbers up to 9"),
+         //possible smallerNumberClass are "Unit class","Thousand class","Million class","Milliard class"
+         "smallerNumberClass": "Thousand class",
+         "biggerNumberClass": "Milliard class",
          "numbers" : [
             "1",
             "2",

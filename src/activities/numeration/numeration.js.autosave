@@ -30,6 +30,7 @@ var numbersToConvertIndex = 0
 var classNamesArray = {}
 var smallerNumberClass = ""
 var biggerNumberClass = ""
+var numberWeightDragElementSelectedIndex = -1
 
 var classConstant = {
     "Unit class": 0,
@@ -288,10 +289,12 @@ function selectNumberWeightDragElement(elementIndex) {
     console.log("--*-* " + items.numberWeightDragListModel.get(elementIndex).selected)
     if (items.numberWeightDragListModel.get(elementIndex).selected === true) {
         items.numberWeightDragListModel.setProperty(elementIndex, "selected", false)
+        numberWeightDragElementSelectedIndex = -1
     }
     else {
         unselectAllNumberWeightDragElement()
         items.numberWeightDragListModel.setProperty(elementIndex, "selected", true)
+        numberWeightDragElementSelectedIndex = elementIndex
     }
     console.log("----++" + elementIndex)
 }
