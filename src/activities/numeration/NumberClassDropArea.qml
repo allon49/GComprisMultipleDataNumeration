@@ -28,12 +28,13 @@ Rectangle {
     id: numberClassDropArea
 
     property string className
-    property var unitColumnWeightImagesArray: ["","","","","","","","",""]
+    property var unitColumnWeightImagesArray: ["","","","","","","","",""]   //?
     property int unitColumnWeightImagesArrayIndex: 0
     property var tenColumnWeightImagesArray: ["","","","","","","","",""]
     property int tenColumnWeightImagesArrayIndex: 0
     property var hundredColumnWeightImagesArray: ["","","","","","","","",""]
     property int hundredColumnWeightImagesArrayIndex: 0
+    property string numberClassDropAreaIndex: index
 
     property string defaultColor: "darkseagreen"
     property string overlapColor: "grey"
@@ -53,7 +54,7 @@ Rectangle {
         ListElement {
             weightType: "Hundred"
             name: "Drag number weight here"
-            weightElementDroppedName: ""
+            weightElementDroppedName: ""   //?
         }
         ListElement {
             weightType: "Ten"
@@ -99,12 +100,13 @@ Rectangle {
                 NumberWeightHeaderElement {
                     id: numberWeightHeaderElement
 
-                    x: 0 //numberWeightDropAreaRectangle.x
+                    x: 0 //numberWeightDropAreaRectangle.x  //?
                     y: 0 //numberWeightDropAreaRectangle.y
                     width: numberWeightDropAreaRectangle.width
                     height: numberWeightDropAreaRectangle.height /10
                 }
 
+                // Implement NumberWeightsHeaders elements
                 DropArea {
                     id: numberWeightsHeaderDropArea
 
@@ -129,15 +131,10 @@ Rectangle {
                         console.log("dropped number in: " + index)
 
                         console.log("Header- "+ className + " " + drag.source.name)
-
                         numberWeightHeadersModel.setProperty(index, "name", drag.source.name)
-
-                        callUpdateNumberWeightHeaderCaption()
-
+                        callUpdateNumberWeightHeaderCaption()   //?
                         console.log("jjjjjjj : " + numberWeightsDropAreasRepeater.classNameStr)
-
                         console.log(numberWeightsDropAreasRepeater.modelData)
-
                         console.log(numberWeightHeadersModel.get(index).name)
                     }
 
@@ -146,7 +143,7 @@ Rectangle {
                     }
                 }
 
-
+                // Implement columns where the numberWeights are set by the user
                 Rectangle {
                     id: numberWeightsDropTiles
 
@@ -155,7 +152,7 @@ Rectangle {
                     anchors.top: numberWeightHeaderElement.bottom
                     width: parent.width
                     height: parent.height - numberWeightHeaderElement.height
-                    z:1
+
 
                     Grid {
                         id: numberWeightDropAreaGrid
@@ -173,6 +170,7 @@ Rectangle {
 
                             DropArea {
                                 property alias numberWeightImageTile: numberWeightImageTile
+                                property alias numberWeightComponentRectangle: numberWeightComponentRectangle
 
                                 keys: "numberWeightKey"
 
@@ -180,76 +178,62 @@ Rectangle {
                                 height: parent.height/9
 
                                 onEntered: {
-                                    numberWeightRectangleTile.color = overlapColor
+                                    numberWeightComponentRectangle.color = overlapColor
                                 }
 
                                 onExited: {
-                                    numberWeightRectangleTile.color = defaultColor
+                                    numberWeightComponentRectangle.color = defaultColor
                                 }
 
                                 onDropped: {
                                     numberWeightImageTile.source = "qrc:/gcompris/src/activities/numeration/resource/images/" + drag.source.imageName
                                     numberWeightImageTile.caption = drag.source.caption
-                                    numberWeightRectangleTile.color = defaultColor
-                                    numberWeightItem.weightValue = drag.source.weightValue
+                                    numberWeightImageTile.weightValue = drag.source.weightValue
+                                    numberWeightComponentRectangle.color = defaultColor
                                     Activity.writeClassNameValue(className, numberWeightKey, index, drag.source.weightValue)
+                                    console.log("weight index: " + numberWeightDropAreaRectangleIndex + " " + numberClassDropAreaIndex)
                                 }
 
                                 Rectangle {
-                                    id: numberWeightRectangleTile
+                                    id: numberWeightComponentRectangle  //? replace with numberWeightComponentRectangle
 
-                                 //   property string src
-
-                                    //color: "red"
                                     border.color: "black"
                                     border.width: 5
                                     radius: 10
                                     width: parent.width
                                     height: parent.height
                                     color: defaultColor
-                                  //  src: ""
 
-                                    Item {
-                                        id: numberWeightItem
+                                    Image {
+                                        id: numberWeightImageTile
 
-                                        property int weightValue: 0
+                                        property string caption: ""
+                                        property string weightValue: ""
 
                                         anchors.fill: parent
+                                        sourceSize.width: parent.width
+                                        sourceSize.height: parent.height
 
-                                        Image {
-                                            id: numberWeightImageTile
-
-                                            property string caption: ""
-
-                                            anchors.fill: parent
-                                            //source: "" //numberWeightRectangleTile.src
-
-                                            sourceSize.width: parent.width
-                                            sourceSize.height: parent.height
-
-                                            MouseArea {
-                                                id: test
-                                                 anchors.fill: parent
-                                                 onClicked: {
-                                                     console.log("test--" + numberWeightImageTile.source.length + "--")
-                                                     if (numberWeightImageTile.status === Image.Ready) {
-                                                        numberWeightImageTile.source = ""
-                                                        Activity.writeClassNameValue(className, numberWeightKey, index, 0)
-                                                     }
-                                                     else {
-                                                         if (Activity.selectedNumberWeightDragElementIndex !== -1)
-                                                         {
-                                                             var selectedNumberWeightDragElementImageName = numberWeightDragListModel.get(Activity.selectedNumberWeightDragElementIndex).imageName
-                                                             if ( selectedNumberWeightDragElementImageName !== "") {
-                                                                 numberWeightImageTile.source = "qrc:/gcompris/src/activities/numeration/resource/images/" + selectedNumberWeightDragElementImageName
-                                                             }
-                                                             numberWeightImageTile.caption = numberWeightDragListModel.get(Activity.selectedNumberWeightDragElementIndex).caption
-                                                             numberWeightRectangleTile.color = defaultColor
-                                                             numberWeightItem.weightValue = numberWeightDragListModel.get(Activity.selectedNumberWeightDragElementIndex).weightValue
-                                                             Activity.writeClassNameValue(className, numberWeightKey, index, numberWeightItem.weightValue)
-                                                        }
-                                                    }
+                                        MouseArea {
+                                             anchors.fill: parent
+                                             onClicked: {
+                                                 if (numberWeightImageTile.status === Image.Ready) {
+                                                    numberWeightImageTile.source = ""
+                                                    Activity.writeClassNameValue(className, numberWeightKey, index, 0)
                                                  }
+                                                 else {
+                                                     if (Activity.selectedNumberWeightDragElementIndex !== -1)
+                                                     {
+                                                         var selectedNumberWeightDragElementImageName = numberWeightDragListModel.get(Activity.selectedNumberWeightDragElementIndex).imageName
+                                                         if ( selectedNumberWeightDragElementImageName !== "") {
+                                                             numberWeightImageTile.source = "qrc:/gcompris/src/activities/numeration/resource/images/" + selectedNumberWeightDragElementImageName
+                                                         }
+                                                         numberWeightImageTile.caption = numberWeightDragListModel.get(Activity.selectedNumberWeightDragElementIndex).caption
+                                                         numberWeightImageTile.weightValue = numberWeightDragListModel.get(Activity.selectedNumberWeightDragElementIndex).weightValue
+                                                         //numberWeightComponentRectangle.color = defaultColor
+                                                         Activity.writeClassNameValue(className, numberWeightKey, index, numberWeightImageTile.weightValue)
+                                                    }
+                                                }
                                              }
                                         }
 

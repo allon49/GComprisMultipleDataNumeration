@@ -28,9 +28,8 @@ var scorePercentage = 0
 var scorePourcentageStep = 0
 var numbersToConvertIndex = 0
 var classNamesArray = {}
-var smallerNumberClass = ""
-var biggerNumberClass = ""
 var selectedNumberWeightDragElementIndex = -1
+var classNamesUsedArray
 
 var classConstant = {
     "Unit class": 0,
@@ -58,8 +57,7 @@ var numberClassesObj = {
     "Milliard class": { name: qsTr("Milliard class"), color: "black", dragkeys: "NumberClassKey"}
 }
 
-var numberWeightsConstantArray = ["Unit","Ten","Hundred"]  //?
-var numberWeightsColumnsArray = ["UnitColumn","TenColumn","HundredColumn"]
+var numberWeightsColumnsArray = ["HundredColumn","TenColumn","UnitColumn"]
 
 var numberWeightsObj = {
     "Unit": { name: qsTr("Unit"), color: "darkred", dragkeys: "numberWeightHeaderKey"},
@@ -138,6 +136,94 @@ function resetNumerationTable() {
     }
 }
 
+function checkIfWeightsAreInTheRightColumns() {
+    for (var i = 0; i<items.numberClassListModel.count; i++) {
+        for (var j=0; j<3; j++) {
+            console.log("getNumberColumnWeight: " + getNumberColumnWeight(i, j))
+            var numberColumnWeight = getNumberColumnWeight(i, j)
+            for (var k=0; k<9; k++) {
+                 var numberWeightWeight = getNumberWeightWeight(i, j, k)
+                if (numberWeightWeight !== "") {
+                    console.log("get image names: " + getNumberWeightImageName(i, j, k))
+                    console.log("get getNumberWeightWeight: " + getNumberWeightWeight(i, j, k))
+                    if (numberColumnWeight != numberWeightWeight) {
+                        console.log("Error: numberColumnWeight !== numberWeightWeight: " + numberColumnWeight + "/" + numberWeightWeight)
+                        items.numberClassDropAreaRepeater.itemAt(i).numberWeightsDropAreasRepeaterAlias.itemAt(j).numberWeightsDropTiles.numberWeightDropAreaGridRepeater.itemAt(k).numberWeightComponentRectangle.border.color = "red"
+                    }
+                    else
+                    {
+                        items.numberClassDropAreaRepeater.itemAt(i).numberWeightsDropAreasRepeaterAlias.itemAt(j).numberWeightsDropTiles.numberWeightDropAreaGridRepeater.itemAt(k).numberWeightComponentRectangle.border.color = "black"
+                        console.log("Successful" + numberColumnWeight + "/" + numberWeightWeight)
+                    }
+                }
+            }
+        }
+    }
+}
+
+function getNumberWeightImageName(numberClassIndex, numberWeightIndex, numberWeightComponentIndex) {
+    return items.numberClassDropAreaRepeater.itemAt(numberClassIndex).numberWeightsDropAreasRepeaterAlias.itemAt(numberWeightIndex).numberWeightsDropTiles.numberWeightDropAreaGridRepeater.itemAt(numberWeightComponentIndex).numberWeightImageTile.source
+}
+
+function getNumberWeightWeight(numberClassIndex, numberWeightIndex, numberWeightComponentIndex) {
+    return items.numberClassDropAreaRepeater.itemAt(numberClassIndex).numberWeightsDropAreasRepeaterAlias.itemAt(numberWeightIndex).numberWeightsDropTiles.numberWeightDropAreaGridRepeater.itemAt(numberWeightComponentIndex).numberWeightImageTile.weightValue
+}
+
+function getNumberColumnWeight(numberClassIndex, numberWeightIndex) {
+    var numberClassName = classNamesUsedArray[numberClassIndex]
+    var numberWeight = numberWeightsColumnsArray[numberWeightIndex]
+//    console.log("numberClassName: " + numberClassName)
+//    console.log("numberWeight: " + numberWeight)
+
+    var numberColumnWeight
+    var columnWeightKey = numberClassName + "_" + numberWeight
+//    console.log(numberClassName + "_" + numberWeight)
+
+    switch (columnWeightKey) {
+        case "Unit class_UnitColumn":
+          numberColumnWeight = 1
+          break;
+        case "Unit class_TenColumn":
+          numberColumnWeight = 10
+          break;
+        case "Unit class_HundredColumn":
+          numberColumnWeight = 100
+          break;
+        case "Thousand class_UnitColumn":
+          numberColumnWeight = 1000
+          break;
+        case "Thousand class_TenColumn":
+          numberColumnWeight = 10000
+          break;
+        case "Thousand class_HundredColumn":
+          numberColumnWeight = 100000
+          break;
+        case "Million class_UnitColumn":
+          numberColumnWeight = 1000000
+          break;
+        case "Million class_TenColumn":
+          numberColumnWeight = 10000000
+          break;
+        case "Million class_HundredColumn":
+          numberColumnWeight = 100000000
+          break;
+        case "Milliard class_UnitColumn":
+          numberColumnWeight = 1000000000
+          break;
+        case "Milliard class_TenColumn":
+          numberColumnWeight = 10000000000
+          break;
+        case "Milliard class_HundredColumn":
+          numberColumnWeight = 100000000000
+          break;
+        default:
+        console.log("Error in getNumberColumnWeight function");
+    }
+    return numberColumnWeight
+}
+
+
+
 function readNumerationTableEnteredValue() {
     var enteredValue = 0
     for (var i=0; i<Object.keys(classConstant).length; i++) {
@@ -154,6 +240,7 @@ function readNumerationTableEnteredValue() {
 //check if the answer is correct
 function checkAnswer() {
 
+    checkIfWeightsAreInTheRightColumns()
 
 
 
@@ -178,7 +265,7 @@ function checkAnswer() {
         else items.numberClassListModel.setProperty(i, "misplaced", true)
     }
 
-    //check number weights
+    //check number weights positions
     for (i = 0; i<items.numberClassListModel.count; i++) {
         for (var j=0; j<3; j++) {
             var numberWeightTypeDropped = items.numberClassDropAreaRepeater.itemAt(i).numberWeightsDropAreasRepeaterAlias.itemAt(j).numberWeightHeaderElement.textAlias
@@ -192,10 +279,8 @@ function checkAnswer() {
 
     //check entered values
     var enteredValue = readNumerationTableEnteredValue()
-//    console.log("enteredValue: " + enteredValue)
-//    console.log("numbersToConvert[numbersToConvertIndex]: " + numbersToConvert[numbersToConvertIndex])
 
-    //test if given answer is equal to given number
+    //test if entered value is equal to number expected
     if (enteredValue === parseInt(numbersToConvert[numbersToConvertIndex],10)) {
         items.bonus.good("flower")
         scorePercentage = scorePercentage + scorePourcentageStep
@@ -232,7 +317,6 @@ function checkAnswer() {
     }
 }
 
-
 function start(items_) {
     items = items_
     currentLevel = 0
@@ -247,18 +331,20 @@ function start(items_) {
     numberOfLevel = items.levels.length  // ?
 }
 
-
-function setNumberClassDragListModel(fullClassNamesConstantArray) {
-    smallerNumberClass = items.levels[currentLevel].smallerNumberClass
-    biggerNumberClass = items.levels[currentLevel].biggerNumberClass
-    var classNamesUsedArray
+function setClassNamesUsedArray(fullClassNamesConstantArray) {
+    var smallerNumberClass = items.levels[currentLevel].smallerNumberClass
+    var biggerNumberClass = items.levels[currentLevel].biggerNumberClass
     if (fullClassNamesConstantArray.indexOf(smallerNumberClass) !== -1 && fullClassNamesConstantArray.indexOf(biggerNumberClass)  !== -1) {
-        classNamesUsedArray = fullClassNamesConstantArray.slice(fullClassNamesConstantArray.indexOf(smallerNumberClass),fullClassNamesConstantArray.indexOf(biggerNumberClass)+1)
-        console.log("classNamesUsed " + classNamesUsedArray)
+        return fullClassNamesConstantArray.slice(fullClassNamesConstantArray.indexOf(smallerNumberClass),fullClassNamesConstantArray.indexOf(biggerNumberClass)+1)
     }
     else {
-        classNamesUsedArray = fullClassNamesConstantArray
+        return fullClassNamesConstantArray
     }
+}
+
+function setNumberClassDragListModel(fullClassNamesConstantArray) {
+    classNamesUsedArray = setClassNamesUsedArray(fullClassNamesConstantArray)
+    console.log("classNamesUsed " + classNamesUsedArray)
     for (var i=0; i<classNamesUsedArray.length; i++) {
         var classNameStr = classNamesUsedArray[i]
         console.log("classname to add " + classNameStr)
@@ -267,7 +353,6 @@ function setNumberClassDragListModel(fullClassNamesConstantArray) {
                                                 "dragkeys": numberClassesObj[classNameStr]["dragkeys"]})
     }
 }
-
 
 function setNumberWeightDragListModel(numberWeightComponentConstantArray) {
     for (var i=0; i<numberWeightComponentConstantArray.length; i++) {
