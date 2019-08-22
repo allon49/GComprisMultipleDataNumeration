@@ -30,6 +30,7 @@ var numbersToConvertIndex = 0
 var classNamesArray = {}
 var smallerNumberClass = ""
 var biggerNumberClass = ""
+var selectedNumberWeightDragElementIndex = -1
 
 var classConstant = {
     "Unit class": 0,
@@ -74,8 +75,8 @@ var numberWeightComponentObj = {
     "UnitColumn": { name: qsTr("Unit"), caption: "Unit", imageName: "", weightValue: "1", dragkeys: "numberWeightHeaderKey", color: "lightskyblue", selected: false },
     "TenColumn": { name: qsTr("Ten"), caption: "Ten", imageName: "", weightValue: "10", dragkeys: "numberWeightHeaderKey", color: "lightskyblue", selected: false },
     "HundredColumn": { name: qsTr("Hundred"), caption: "Hundred", imageName: "", weightValue: "100", dragkeys: "numberWeightHeaderKey", color: "lightskyblue", selected: false },
-    "Unit": { name: qsTr("Unit"), caption: "", imageName: "unit.svg", weightValue: "1", dragkeys: "numberWeightKey", color: "transparent", selected: true },
-    "Ten": { name: qsTr("Unit"), caption: "", imageName: "ten.svg", weightValue: "10", dragkeys: "numberWeightKey", color: "transparent", selected: false },
+    "Unit": { name: qsTr("Unit"), caption: "", imageName: "unit.svg", weightValue: "1", dragkeys: "numberWeightKey", color: "transparent", selected: false },
+    "Ten": { name: qsTr("Unit"), caption: "", imageName: "ten.svg", weightValue: "10", dragkeys: "numberWeightKey", color: "transparent", selected: true },
     "Hundred": { name: qsTr("Unit"), caption: "", imageName: "hundred.svg", weightValue: "100", dragkeys: "numberWeightKey", color: "transparent", selected: false },
     "Thousand": { name: qsTr("Unit"), caption: "1000", imageName: "weightCaption.svg", weightValue: "1000", dragkeys: "numberWeightKey", color: "transparent", selected: false },
     "TenThousand": { name: qsTr("Unit"), caption: "10 000", imageName: "weightCaption.svg", weightValue: "10000", dragkeys: "numberWeightKey", color: "transparent", selected: false },
@@ -288,12 +289,13 @@ function selectNumberWeightDragElement(elementIndex) {
     console.log("--*-* " + items.numberWeightDragListModel.get(elementIndex).selected)
     if (items.numberWeightDragListModel.get(elementIndex).selected === true) {
         items.numberWeightDragListModel.setProperty(elementIndex, "selected", false)
+        selectedNumberWeightDragElementIndex = -1
     }
     else {
         unselectAllNumberWeightDragElement()
         items.numberWeightDragListModel.setProperty(elementIndex, "selected", true)
+        selectedNumberWeightDragElementIndex = elementIndex
     }
-    console.log("----++" + elementIndex)
 }
 
 function unselectAllNumberWeightDragElement() {

@@ -34,6 +34,7 @@ ActivityBase {
 
     pageComponent: Rectangle {
         id: background
+
         anchors.fill: parent
         color: "#ffffb3"
         signal start
@@ -329,6 +330,8 @@ ActivityBase {
                     NumberClassDropArea {
                         id: numberClassDropAreaElement
 
+                        //property alias numberWeightDragListModel: activity.background.numberWeightDragListModel //?
+
                         className: name  //name comes from numberClassListModel
 
                         Layout.fillHeight: true
@@ -343,6 +346,8 @@ ActivityBase {
 
         ListModel {
             id: numberClassListModel
+
+
         }
 
         ListModel {

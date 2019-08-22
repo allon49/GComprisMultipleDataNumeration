@@ -89,7 +89,7 @@ Item {
                 color: "black"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
-                text: index     //numberClassListModel.get(index).name
+                text: index     //numberClassListModel.get(index).name //?
                 z: 100
             }
 
