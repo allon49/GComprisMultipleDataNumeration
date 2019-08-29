@@ -256,7 +256,7 @@ function checkEnteredValue() {
     //test if entered value is equal to number expected
     if (enteredValue === parseInt(numbersToConvert[numbersToConvertIndex],10)) {
         items.bonus.good("flower")
-        scorePercentage = scorePercentage + scorePourcentageStep
+        scorePercentage = scorePercentage + scorePourcentageStep    //?
         items.progressBar.value = scorePercentage
         if (scorePercentage > 97) {
             nextLevel()

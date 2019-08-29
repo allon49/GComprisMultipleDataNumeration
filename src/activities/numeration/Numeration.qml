@@ -304,10 +304,6 @@ ActivityBase {
                     DropArea {
                         anchors { fill: parent; margins: 10 }
                         onEntered: {
-                            console.log("entered")
-                            //visualModel.items.move(drag.source.DelegateModel.itemsIndex, dragArea.DelegateModel.itemsIndex)
-                                    console.log("drag.source.DelegateModel.itemsIndex : " + drag.source.DelegateModel.itemsIndex)
-                                    console.log("dragArea.DelegateModel.itemsIndex : " + dragArea.DelegateModel.itemsIndex)
                             numberClassListModel.move(drag.source.DelegateModel.itemsIndex, dragArea.DelegateModel.itemsIndex,1)
                         }
                     }
@@ -530,7 +526,5 @@ ActivityBase {
         Bonus {
             id: bonus
         }
-
     }
-
 }

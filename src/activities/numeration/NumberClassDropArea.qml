@@ -17,7 +17,7 @@
  */
 
 import QtQuick 2.6
-import GCompris 1.0
+import GCompris 1.0 //?
 import QtQuick.Layouts 1.3
 
 import "../../core"
@@ -40,8 +40,6 @@ Rectangle {
     property string overlapColor: "grey"
 
     property alias numberWeightsDropAreasRepeaterAlias: numberWeightsDropAreasRepeater
-//    property alias numberWeightHeadersModelAlias: numberWeightHeadersModel //?
-
 
     width: parent.width
     height: parent.height - numberClassHeaders.height
@@ -67,7 +65,6 @@ Rectangle {
             weightElementDroppedName: ""
         }
     }
-
 
     RowLayout {
         id: numberWeightsDropAreasRowLayout
@@ -186,12 +183,11 @@ Rectangle {
                                 }
 
                                 onDropped: {
-                                    numberWeightImageTile.source = "qrc:/gcompris/src/activities/numeration/resource/images/" + drag.source.imageName
-                                    numberWeightImageTile.caption = drag.source.caption
-                                    numberWeightImageTile.weightValue = drag.source.weightValue
+                                    var imageName = drag.source.imageName
+                                    var caption = drag.source.caption
+                                    var weightValue = drag.source.weightValue
+                                    Activity.setNumberWeightComponent(numberWeightImageTile,imageName,caption, weightValue)
                                     numberWeightComponentRectangle.color = defaultColor
-                                    Activity.writeClassNameValue(className, numberWeightKey, index, drag.source.weightValue)
-                                    console.log("weight index: " + numberWeightDropAreaRectangleIndex + " " + numberClassDropAreaIndex)
                                 }
 
                                 Rectangle {
@@ -218,20 +214,15 @@ Rectangle {
                                              anchors.fill: parent
                                              onClicked: {
                                                  if (numberWeightImageTile.status === Image.Ready) {
-                                                    numberWeightImageTile.source = ""
-                                                    Activity.writeClassNameValue(className, numberWeightKey, index, 0)
+                                                   // numberWeightImageTile.source = ""
+                                                    Activity.removeNumberWeightComponent(numberWeightImageTile)
                                                  }
                                                  else {
-                                                     if (Activity.selectedNumberWeightDragElementIndex !== -1)
-                                                     {
-                                                         var selectedNumberWeightDragElementImageName = numberWeightDragListModel.get(Activity.selectedNumberWeightDragElementIndex).imageName
-                                                         if ( selectedNumberWeightDragElementImageName !== "") {
-                                                             numberWeightImageTile.source = "qrc:/gcompris/src/activities/numeration/resource/images/" + selectedNumberWeightDragElementImageName
-                                                         }
-                                                         numberWeightImageTile.caption = numberWeightDragListModel.get(Activity.selectedNumberWeightDragElementIndex).caption
-                                                         numberWeightImageTile.weightValue = numberWeightDragListModel.get(Activity.selectedNumberWeightDragElementIndex).weightValue
-                                                         //numberWeightComponentRectangle.color = defaultColor
-                                                         Activity.writeClassNameValue(className, numberWeightKey, index, numberWeightImageTile.weightValue)
+                                                    if (Activity.selectedNumberWeightDragElementIndex !== -1) {
+                                                         var imageName = numberWeightDragListModel.get(Activity.selectedNumberWeightDragElementIndex).imageName
+                                                         var caption = numberWeightDragListModel.get(Activity.selectedNumberWeightDragElementIndex).caption
+                                                         var weightValue = numberWeightDragListModel.get(Activity.selectedNumberWeightDragElementIndex).weightValue
+                                                         Activity.setNumberWeightComponent(numberWeightImageTile,imageName,caption,weightValue)
                                                     }
                                                 }
                                              }
