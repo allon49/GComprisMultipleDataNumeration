@@ -23,7 +23,6 @@ import QtQuick.Layouts 1.3
 import "../../core"
 import "numeration.js" as Activity
 
-
 Rectangle {
     id: numberClassDropArea
 
@@ -47,24 +46,18 @@ Rectangle {
     color: "blue"
 
     ListModel {
-        id: numberWeightHeadersModel
+            id: numberWeightHeadersModel
 
-        ListElement {
-            weightType: "Hundred"
-            name: "Drag number weight here"
-            weightElementDroppedName: ""   //?
+            ListElement {
+                weightType: "Hundred"
+            }
+            ListElement {
+                weightType: "Ten"
+            }
+            ListElement {
+                weightType: "Unit"
+            }
         }
-        ListElement {
-            weightType: "Ten"
-            name: "Drag number weight here"
-            weightElementDroppedName: ""
-        }
-        ListElement {
-            weightType: "Unit"
-            name: "Drag number weight here"
-            weightElementDroppedName: ""
-        }
-    }
 
     RowLayout {
         id: numberWeightsDropAreasRowLayout
@@ -97,47 +90,10 @@ Rectangle {
                 NumberWeightHeaderElement {
                     id: numberWeightHeaderElement
 
-                    x: 0 //numberWeightDropAreaRectangle.x  //?
-                    y: 0 //numberWeightDropAreaRectangle.y
+                    x: 0
+                    y: 0
                     width: numberWeightDropAreaRectangle.width
                     height: numberWeightDropAreaRectangle.height /10
-                }
-
-                // Implement NumberWeightsHeaders elements
-                DropArea {
-                    id: numberWeightsHeaderDropArea
-
-                    keys: "numberWeightHeaderKey"
-
-                    anchors.top: numberWeightHeaderElement.top
-                    width: parent.width
-                    height: parent.height - numberWeightHeaderElement.height
-
-                    states: [
-                       State {
-                           when: numberWeightsHeaderDropArea.containsDrag
-                           PropertyChanges {
-                               target: numberWeightDropAreaRectangle
-                               color: overlapColor
-                           }
-                       }
-                    ]
-
-                    onDropped: {
-                        //console.log("dropped number in: " + numberWeightHeadersModel.get(index).name)
-                        console.log("dropped number in: " + index)
-
-                        console.log("Header- "+ className + " " + drag.source.name)
-                        numberWeightHeadersModel.setProperty(index, "name", drag.source.name)
-                        callUpdateNumberWeightHeaderCaption()   //?
-                        console.log("jjjjjjj : " + numberWeightsDropAreasRepeater.classNameStr)
-                        console.log(numberWeightsDropAreasRepeater.modelData)
-                        console.log(numberWeightHeadersModel.get(index).name)
-                    }
-
-                    function callUpdateNumberWeightHeaderCaption() {
-                        numberWeightHeaderElement.updateNumberWeightHeaderCaption()
-                    }
                 }
 
                 // Implement columns where the numberWeights are set by the user
@@ -149,7 +105,6 @@ Rectangle {
                     anchors.top: numberWeightHeaderElement.bottom
                     width: parent.width
                     height: parent.height - numberWeightHeaderElement.height
-
 
                     Grid {
                         id: numberWeightDropAreaGrid
@@ -191,7 +146,7 @@ Rectangle {
                                 }
 
                                 Rectangle {
-                                    id: numberWeightComponentRectangle  //? replace with numberWeightComponentRectangle
+                                    id: numberWeightComponentRectangle
 
                                     border.color: "black"
                                     border.width: 5

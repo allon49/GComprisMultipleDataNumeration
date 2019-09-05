@@ -31,12 +31,11 @@ var selectedNumberWeightDragElementIndex = -1
 var allWeightsAreInTheRightColumns
 
 
-var fullClassNamesConstantArray = ["Unit class","Thousand class","Million class","Milliard class"]
+var fullClassNamesConstantArray = ["Decimal Part","Unit class","Thousand class","Million class","Milliard class"]
 var classNamesUsedArray
 
-var classNamesConstantArray = []
-
 var numberClassesObj = {
+    "Decimal Part": { name: qsTr("Decimal Part"), color: "black", dragkeys: "NumberClassKey"},
     "Unit class": { name: qsTr("Unit class"), color: "black", dragkeys: "NumberClassKey"},
     "Thousand class": { name: qsTr("Thousand class"), color: "black", dragkeys: "NumberClassKey"},
     "Million class": { name: qsTr("Million class"), color: "black", dragkeys: "NumberClassKey"},
@@ -49,7 +48,9 @@ var numberWeightComponentConstantArray = ["UnitColumn","TenColumn","HundredColum
                                           "OneHundredThousand","OneMillion","TenMillion","OneHundredMillion",
                                           "OneMilliard","TenMilliard","OneHundredMilliard"]
 
-var numberWeightComponentObj = {
+
+
+var numberWeightDragArray = {
     "UnitColumn": { name: qsTr("Unit"), caption: "Unit", imageName: "", weightValue: "1", dragkeys: "numberWeightHeaderKey", color: "lightskyblue", selected: false },
     "TenColumn": { name: qsTr("Ten"), caption: "Ten", imageName: "", weightValue: "10", dragkeys: "numberWeightHeaderKey", color: "lightskyblue", selected: false },
     "HundredColumn": { name: qsTr("Hundred"), caption: "Hundred", imageName: "", weightValue: "100", dragkeys: "numberWeightHeaderKey", color: "lightskyblue", selected: false },
@@ -67,7 +68,11 @@ var numberWeightComponentObj = {
     "OneHundredMilliard": { name: qsTr("Unit"), caption: "100 000 000 000", imageName: "weightCaption.svg", weightValue: "100000000000", dragkeys: "numberWeightKey", color: "transparent" , selected: false }
 }
 
-// for what is used name in numberWeightComponentObj ?  //?
+// for what is used name in numberWeightDragArray ?  //?
+
+
+var numberClassTypeColumnsArray = ["Integer Part","Decimal Part"]
+
 
 
 function removeClassInNumberClassesArray(className) {
@@ -81,6 +86,15 @@ function removeClassInNumberClassesArray(className) {
 
 function removeClassInNumberClassesArray() {
     numberClassesArray.pop(numberClass)
+}
+
+
+function setNumberWeightHeader(numberWeightImageTile,imageName,caption,weightValue) {
+    if ( imageName !== "") {
+        numberWeightImageTile.source = "qrc:/gcompris/src/activities/numeration/resource/images/" + imageName
+    }
+    numberWeightImageTile.caption = caption
+    numberWeightImageTile.weightValue = weightValue
 }
 
 function setNumberWeightComponent(numberWeightImageTile,imageName,caption,weightValue) {
@@ -196,7 +210,6 @@ function checkAnswer() {
 
 }
 
-
 function areAllWeightsInTheRightColumns() {
     var allWeightsAreInTheRightColumns = true
     for (var i = 0; i<items.numberClassListModel.count; i++) {
@@ -225,12 +238,13 @@ function areAllWeightsInTheRightColumns() {
     return allWeightsAreInTheRightColumns
 }
 
-
 function checkNumberWeightsPositions() {
     for (var i = 0; i<items.numberClassListModel.count; i++) {
         for (var j=0; j<3; j++) {
             var numberWeightTypeDropped = items.numberClassDropAreaRepeater.itemAt(i).numberWeightsDropAreasRepeaterAlias.itemAt(j).numberWeightHeaderElement.textAlias
+            console.log("numberWeightTypeDropped",numberWeightTypeDropped)
             var numberWeightType = items.numberClassDropAreaRepeater.itemAt(i).numberWeightsDropAreasRepeaterAlias.itemAt(j).numberWeightType
+            console.log("numberWeightType",numberWeightType)
             if (numberWeightTypeDropped !== numberWeightType) {
                 items.numberClassDropAreaRepeater.itemAt(i).numberWeightsDropAreasRepeaterAlias.itemAt(j).numberWeightHeaderElement.border.width = 5   //?
             }
@@ -238,7 +252,6 @@ function checkNumberWeightsPositions() {
         }
     }
 }
-
 
 function checkNumberClassesColumnsPositions() {
     for (var i=items.numberClassListModel.count-1, classNamesUsedIndex=0 ; i>=0; i--,classNamesUsedIndex++) {
@@ -249,14 +262,13 @@ function checkNumberClassesColumnsPositions() {
     }
 }
 
-
 function checkEnteredValue() {
     var enteredValue = readNumerationTableEnteredValue()
 
     //test if entered value is equal to number expected
     if (enteredValue === parseInt(numbersToConvert[numbersToConvertIndex],10)) {
         items.bonus.good("flower")
-        scorePercentage = scorePercentage + scorePourcentageStep
+        scorePercentage = scorePercentage + scorePourcentageStep    //?
         items.progressBar.value = scorePercentage
         if (scorePercentage > 97) {
             nextLevel()
@@ -285,11 +297,9 @@ function checkEnteredValue() {
     }
 }
 
-
 function start(items_) {
     items = items_
     currentLevel = 0
-
 
     classNamesUsedArray = setClassNamesUsedArray(fullClassNamesConstantArray)
 
@@ -316,9 +326,16 @@ function setNumberClassDragListModel(fullClassNamesConstantArray) {
     for (var i=0; i<classNamesUsedArray.length; i++) {
         var classNameStr = classNamesUsedArray[i]
         console.log("classname to add " + classNameStr)
-        items.numberClassDragListModel.append({"name": numberClassesObj[classNameStr]["name"],
-                                                "color": numberClassesObj[classNameStr]["color"],
-                                                "dragkeys": numberClassesObj[classNameStr]["dragkeys"]})
+
+        if (classNameStr === "Decimal Part") {
+            console.log("appendDecimalPartClassColumn")
+            appendDecimalPartClassColumn()
+        }
+        else {
+            items.numberClassDragListModel.append({"name": numberClassesObj[classNameStr]["name"],
+                                                    "color": numberClassesObj[classNameStr]["color"],
+                                                    "dragkeys": numberClassesObj[classNameStr]["dragkeys"]})
+        }
     }
 }
 
@@ -326,17 +343,22 @@ function setNumberWeightDragListModel(numberWeightComponentConstantArray) {
     for (var i=0; i<numberWeightComponentConstantArray.length; i++) {
         var weightNameStr = numberWeightComponentConstantArray[i]
         console.log("numberWeightsColumn to add " + weightNameStr)
-        console.log("numberWeightComponentObj[weightNameStr][selected]" + numberWeightComponentObj[weightNameStr]["selected"])
-        items.numberWeightDragListModel.append({"name": numberWeightComponentObj[weightNameStr]["name"],
-                                                "imageName": numberWeightComponentObj[weightNameStr]["imageName"],
-                                                "dragkeys": numberWeightComponentObj[weightNameStr]["dragkeys"],
-                                                "weightValue": numberWeightComponentObj[weightNameStr]["weightValue"],
-                                                "caption": numberWeightComponentObj[weightNameStr]["caption"],
-                                                "color": numberWeightComponentObj[weightNameStr]["color"],
-                                                "selected": numberWeightComponentObj[weightNameStr]["selected"]
+        console.log("numberWeightDragArray[weightNameStr][selected]" + numberWeightDragArray[weightNameStr]["selected"])
+
+        items.numberWeightDragListModel.append({"name": numberWeightDragArray[weightNameStr]["name"],
+                                                "imageName": numberWeightDragArray[weightNameStr]["imageName"],
+                                                "dragkeys": numberWeightDragArray[weightNameStr]["dragkeys"],
+                                                "weightValue": numberWeightDragArray[weightNameStr]["weightValue"],
+                                                "caption": numberWeightDragArray[weightNameStr]["caption"],
+                                                "color": numberWeightDragArray[weightNameStr]["color"],
+                                                "selected": numberWeightDragArray[weightNameStr]["selected"]
                                                })
     }
 }
+
+
+
+
 
 function selectNumberWeightDragElement(elementIndex) {
     console.log("--*-* " + items.numberWeightDragListModel.get(elementIndex).selected)
@@ -359,6 +381,32 @@ function unselectAllNumberWeightDragElement() {
 
 function stop() {
 }
+
+
+function appendDecimalPartClassColumn() {
+    items.numberClassListModel.append({"name": "Decimal Part", "misplaced": false})
+    items.numberClassTypeModel.append({"numberClassType":  "Decimal Part"})
+}
+
+
+function appendClassNameColumn(className,element_src,misplaced) {
+    items.numberClassListModel.insert(0,{"name": className, "element_src": element_src, "misplaced": false})
+}
+
+function addIntegerPartToListView(numberClassTypeModel) {
+    var hasIntegerPart = false
+    for (var i=0; i<numberClassTypeModel.count; i++) {
+        console.log("numberClassTypeModel.get(i).numberClassType",numberClassTypeModel.get(i).numberClassType)
+        if (numberClassTypeModel.get(i).numberClassType === "Integer Part") {
+            hasIntegerPart = true
+        }
+    }
+    if (hasIntegerPart === false) {
+        console.log("hasIntegerPart",hasIntegerPart)
+        numberClassTypeModel.insert(0, {"numberClassType": "Integer Part"})
+    }
+}
+
 
 function initLevel() {
     console.log("start init ")

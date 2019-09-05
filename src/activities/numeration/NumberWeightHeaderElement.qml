@@ -21,14 +21,18 @@ import QtQuick 2.6
 import GCompris 1.0
 
 import "../../core"
+import "numeration.js" as Activity
 
 Rectangle {
     id: numberWeightHeaderElement
+
+    property string defaultColor: "darkred"
+    property string overlapColor: "blue"
+
     color: "darkred"
     radius: 0.2
-    z: 1
 
-    anchors.top: parent.top
+    anchors.top: parent.top   //?
 
     property int lastX
     property int lastY
@@ -37,42 +41,75 @@ Rectangle {
 
     property alias textAlias: numberWeightHeaderCaption.text
 
-    Drag.active: numberWeightHeaderElementMouseArea.drag.active
-    Drag.keys: "NumberWeightHeaderKey"
-
     border.color: "red"
     border.width: 0
 
-    function updateNumberWeightHeaderCaption() {
-        numberWeightHeaderCaption.text = numberWeightHeadersModel.get(index).name
-    }
+    DropArea {
+        id: numberWeightsHeaderDropArea
 
+        anchors.fill: parent
+        keys: "numberWeightHeaderKey"
+
+        onEntered: {
+            numberWeightHeaderElement.color = overlapColor
+        }
+
+        onExited: {
+            numberWeightHeaderElement.color = defaultColor
+        }
+
+        onDropped: {
+            numberWeightHeaderElement.color = defaultColor
+            numberWeightHeaderCaption.text = drag.source.caption
+        }
+
+        Image {
+            id: numberWeightHeaderImage
+
+            anchors.fill: parent
+            sourceSize.width: parent.width //?
+            sourceSize.height: parent.height
+
+            GCText {
+                id: numberClassElementCaption
+
+                anchors.fill: parent
+                anchors.bottom: parent.bottom
+                fontSizeMode: Text.Fit
+                color: "white"
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+            }
+        }
+    }
 
     GCText {
         id: numberWeightHeaderCaption
 
         anchors.fill: parent
-        anchors.topMargin: 10
-        anchors.bottomMargin: 10   //find a way to fit the text without truncating it
-        anchors.leftMargin: 10
-        anchors.rightMargin: 10
-        anchors.bottom: parent.bottom
+        anchors.margins: 10  //find a way to fit the text without truncating it
         fontSizeMode: Text.Fit
         color: "white"
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter
-        text: numberWeightHeadersModel.get(index).name  // here error to be corrected  TypeError: Cannot read property 'name' of undefined
         wrapMode: TextEdit.WordWrap
+        text: qsTr("Drag column weight here.")
     }
 
     MouseArea {
-        id: numberWeightHeaderElementMouseArea
-        anchors.fill: parent
-
-        onPressed: {
-            numberWeightHeadersModel.setProperty(index,"name","?")   //?
-            updateNumberWeightHeaderCaption()
-        }
-
+         anchors.fill: parent
+         onClicked: {
+             if (numberWeightHeaderImage.status === Image.Ready) {
+                Activity.removeNumberWeightComponent(numberWeightImageTile)
+             }
+             else {
+                if (Activity.selectedNumberWeightDragElementIndex !== -1) {
+                    if (numberWeightDragListModel.get(Activity.selectedNumberWeightDragElementIndex).dragkeys === "numberWeightHeaderKey") {
+                        numberWeightHeaderImage.source = numberWeightDragListModel.get(Activity.selectedNumberWeightDragElementIndex).imageName
+                        numberWeightHeaderCaption.text = numberWeightDragListModel.get(Activity.selectedNumberWeightDragElementIndex).caption
+                    }
+                }
+            }
+         }
     }
 }

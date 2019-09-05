@@ -58,6 +58,7 @@ ActivityBase {
             property alias  numberClassListModel: numberClassListModel
             property alias numberClassDragListModel: numberClassDragListModel
             property alias numberWeightDragListModel: numberWeightDragListModel
+            property alias numberClassTypeModel: numberClassTypeModel
             property alias leftWidget: leftWidget
             property alias progressBar: progressBar
             property alias numberClassDropAreaRepeater: numberClassDropAreaRepeater
@@ -116,8 +117,9 @@ ActivityBase {
 
             onDropped: {
                 var className = drag.source.name
-                numberClassListModel.append({"name": className, "element_src": drag.source, "misplaced": false})
-                numberClassListModel.get(numberClassListModel.count-1).element_src.dragEnabled = false
+                Activity.appendClassNameColumn(className, drag.source, false)
+                Activity.addIntegerPartToListView(numberClassTypeModel)
+                //numberClassListModel.get(numberClassListModel.count-1).element_src.dragEnabled = false  //?
             }
 
             Rectangle {
@@ -187,41 +189,94 @@ ActivityBase {
             }
 
 
+            ListModel {
+                id: numberClassTypeModel
+
+/*                ListElement {
+                    numberClassType: "Integer Part"
+                }
+                ListElement {
+                    numberClassType: "Decimal Part"
+                }*/
+            }
+
+            Rectangle {
+                id: numberClassTypeHeader
+                width: mainZoneArea.width
+                height: mainZoneArea.height / 15
+                anchors.top: topBanner.bottom
+                anchors.left: parent.left
+                anchors.right: parent.right
+                border.color: "red"
+                border.width: 1
+
+                ListView {
+                    id: numberClassTypeHeaderListView
+
+                    anchors { fill: parent}
+                    model: numberClassTypeModel
+                    orientation: ListView.Horizontal
+                    //spacing: 10 //?
+
+                    delegate: Rectangle {
+                        width: numberClassTypeModel.get(index).numberClassType === "Decimal Part" ? mainZoneArea.width / numberClassListModel.count : mainZoneArea.width - (mainZoneArea.width / (numberClassListModel.count))
+                        height: numberClassTypeHeader.height / 1.5
+                        border.width: 1
+                        border.color: "black"
+                        color: "lightsteelblue"
+                        radius: 2
+
+                        GCText {
+                           id: numberClassHeaderCaption
+
+                           anchors.fill: parent
+                           anchors.bottom: parent.bottom
+                           fontSizeMode: Text.Fit
+                           color: "black"
+                           verticalAlignment: Text.AlignVCenter
+                           horizontalAlignment: Text.AlignHCenter
+                           text: numberClassTypeModel.get(index).numberClassType
+                        }
+                    }
+                 }
+            }
+
             Rectangle {
                 id: numberClassHeaders
 
                 width: mainZoneArea.width
-                height: mainZoneArea.height / 10
-                anchors.top: topBanner.bottom
+                height: mainZoneArea.height / 15
+                anchors.top: numberClassTypeHeader.bottom
                 anchors.left: parent.left
                 anchors.right: parent.right
+
+                border.color: "red"
+                border.width: 1
+
 
                 GCText {
                     id: numberClassHeadersRectangleAdvice
                     height: parent.height
                     width: parent.width
                     anchors {
-                        left: parent.left
-                        top: parent.top
+                        horizontalCenter: parent.horizontalCenter
+                        verticalCenter: parent.verticalCenter
                     }
                     opacity: visualModel.count === 0 ? 1 : 0
-                    fontSize: background.vert ? regularSize : smallSize
-                    color: "grey"
-                    style: Text.Outline
-                    styleColor: "black"
+                    fontSizeMode: Text.Fit
+                    color: "black"
+                    verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter
-                    wrapMode: TextEdit.WordWrap
                     text: qsTr("Drag here the class numbers")
                 }
 
                 ListView {
                        id: classNameListView
 
-                       anchors { fill: parent; margins: 2 }
+                       anchors { fill: parent}
                        model: visualModel
                        orientation: ListView.Horizontal
                        interactive: false
-                       spacing: 4
                        cacheBuffer: 50
                  }
 
@@ -233,7 +288,7 @@ ActivityBase {
                 }
             }
 
-            Component {
+            Component {     // ? what to do when removed element ? TypeError: Cannot read property 'misplaced' of undefined
                 id: nnumberClassHeaderElement
 
                 MouseArea {
@@ -251,6 +306,7 @@ ActivityBase {
                     onReleased: {
                         if ((content.x < leftWidget.width) && held)  //? don't understand why I have a content.x = 0 when held is not true, this point needs to be cleared
                         {
+                            console.log("index className element",index)
                             numberClassListModel.get(index).element_src.dragEnabled = true
                             numberClassListModel.remove(index,1)
                         }
@@ -266,7 +322,7 @@ ActivityBase {
                         }
 
                         width: mainZoneArea.width / numberClassListModel.count
-                        height: numberClassHeaders.height / 2
+                        height: numberClassHeaders.height / 1.5
                         border.width: 1
                         border.color: numberClassListModel.get(index).misplaced === true ? "red" : "lightsteelblue"
                         color: dragArea.held ? "lightsteelblue" : "white"
@@ -304,7 +360,12 @@ ActivityBase {
                     DropArea {
                         anchors { fill: parent; margins: 10 }
                         onEntered: {
-                            numberClassListModel.move(drag.source.DelegateModel.itemsIndex, dragArea.DelegateModel.itemsIndex,1)
+                            console.log("dragArea.DelegateModel.itemsIndex",dragArea.DelegateModel.itemsIndex)
+                            console.log("classNameListView.count",classNameListView.count)
+                            //move class name columns except the decimal part which stays always on the last position
+                            if (dragArea.DelegateModel.itemsIndex < classNameListView.count - 1) {
+                                numberClassListModel.move(drag.source.DelegateModel.itemsIndex, dragArea.DelegateModel.itemsIndex,1)
+                            }
                         }
                     }
                 }
@@ -316,7 +377,7 @@ ActivityBase {
 
                 anchors.top: numberClassHeaders.bottom
                 width: parent.width
-                height: parent.height - numberToConvertRectangle.height - numberClassHeaders.height
+                height: parent.height - topBanner.height - numberClassHeaders.height - numberClassTypeHeader.height
                 spacing: 10
 
                 Repeater {
@@ -342,8 +403,6 @@ ActivityBase {
 
         ListModel {
             id: numberClassListModel
-
-
         }
 
         ListModel {
