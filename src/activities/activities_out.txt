@@ -120,8 +120,8 @@ number_sequence
 numbers-odd-even
 paintings
 penalty
-piano_composition
 photo_hunter
+piano_composition
 planegame
 play_piano
 play_rhythm
@@ -137,6 +137,7 @@ roman_numerals
 scalesboard
 scalesboard_weight
 scalesboard_weight_avoirdupois
+server
 share
 simplepaint
 smallnumbers
