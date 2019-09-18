@@ -28,7 +28,7 @@ var scorePercentage = 0
 var scorePourcentageStep = 0
 var numbersToConvertIndex = 0
 var selectedNumberWeightDragElementIndex = -1
-var allWeightsAreInTheRightColumns
+var numberHasADecimalPart = false
 
 
 var fullClassNamesConstantArray = ["Decimal Part","Unit class","Thousand class","Million class","Milliard class"]
@@ -109,6 +109,7 @@ function removeNumberWeightComponent(numberWeightImageTile) {
         numberWeightImageTile.source = ""
         numberWeightImageTile.caption = ""
         numberWeightImageTile.weightValue = ""
+        numberWeightImageTile.border.color = "black"
 }
 
 function resetNumerationTable() {
@@ -131,11 +132,12 @@ function getNumberWeightWeight(numberClassIndex, numberWeightIndex, numberWeight
     return items.numberClassDropAreaRepeater.itemAt(numberClassIndex).numberWeightsDropAreasRepeaterAlias.itemAt(numberWeightIndex).numberWeightsDropTiles.numberWeightDropAreaGridRepeater.itemAt(numberWeightComponentIndex).numberWeightImageTile.weightValue
 }
 
-function getNumberColumnWeight(numberClassIndex, numberWeightIndex) {
-    var numberClassName = classNamesUsedArray[numberClassIndex]
+function getNumberColumnWeight(numberClassName, numberWeightIndex) {
+
     var numberWeight = numberWeightsColumnsArray[numberWeightIndex]
 
     var numberColumnWeight
+    console.log("**********************numberClassName",numberClassName)
     var columnWeightKey = numberClassName + "_" + numberWeight
 
     switch (columnWeightKey) {
@@ -199,14 +201,43 @@ function readNumerationTableEnteredValue() {
 
 //check if the answer is correct
 function checkAnswer() {
+    items.instruction.hide()
 
-    allWeightsAreInTheRightColumns = areAllWeightsInTheRightColumns()
-    console.log("allWeightsAreInTheRightColumns: " + allWeightsAreInTheRightColumns)
+    var allWeightsAreInTheRightColumns = areAllWeightsInTheRightColumns()
+    if (!allWeightsAreInTheRightColumns) {
+        items.instruction.text = qsTr("Some weights are not in the right column.")
+        items.instruction.show()
+        evaluateAndDisplayProgresses(false)
+        return
+    }
 
-    checkNumberWeightsPositions()
-    checkNumberClassesColumnsPositions()
-    checkEnteredValue()
 
+    var allNumberClassesAreInTheRightPosition = checkNumberClassesColumnsPositions()
+    if (!allNumberClassesAreInTheRightPosition) {
+        items.instruction.text = qsTr("Some number classes are not in the right position.")
+        items.instruction.show()
+        evaluateAndDisplayProgresses(false)
+        return
+    }
+
+    var weightHeadersAreInRightColumn = checkNumberWeightHeadersPositions()
+    if (!weightHeadersAreInRightColumn) {
+        items.instruction.text = qsTr("Some weight headers are not in the right place.")
+        items.instruction.show()
+        evaluateAndDisplayProgresses(false)
+        return
+    }
+
+    var valueEnteredIsCorrect = checkEnteredValue()
+    if (!valueEnteredIsCorrect) {
+        items.instruction.text = qsTr("The value you entered \"" + readNumerationTableEnteredValue() + "\" is not the one expected.")
+        items.instruction.show()
+        evaluateAndDisplayProgresses(false)
+        return
+    }
+    else {
+        evaluateAndDisplayProgresses(true)
+    }
 
 }
 
@@ -215,7 +246,8 @@ function areAllWeightsInTheRightColumns() {
     for (var i = 0; i<items.numberClassListModel.count; i++) {
         for (var j=0; j<3; j++) {
             console.log("getNumberColumnWeight: " + getNumberColumnWeight(i, j))
-            var numberColumnWeight = getNumberColumnWeight(i, j)
+            var numberColumnWeight = getNumberColumnWeight(items.numberClassListModel.get(i).name, j)
+            console.log("-*-*-*-*-*numberColumnWeight",numberColumnWeight)
             for (var k=0; k<9; k++) {
                  var numberWeightWeight = getNumberWeightWeight(i, j, k)
                 if (numberWeightWeight !== "") {
@@ -238,37 +270,68 @@ function areAllWeightsInTheRightColumns() {
     return allWeightsAreInTheRightColumns
 }
 
-function checkNumberWeightsPositions() {
+function checkNumberWeightHeadersPositions() {
+    var allNumbersInRightPositions = true
     for (var i = 0; i<items.numberClassListModel.count; i++) {
         for (var j=0; j<3; j++) {
             var numberWeightTypeDropped = items.numberClassDropAreaRepeater.itemAt(i).numberWeightsDropAreasRepeaterAlias.itemAt(j).numberWeightHeaderElement.textAlias
-            console.log("numberWeightTypeDropped",numberWeightTypeDropped)
             var numberWeightType = items.numberClassDropAreaRepeater.itemAt(i).numberWeightsDropAreasRepeaterAlias.itemAt(j).numberWeightType
-            console.log("numberWeightType",numberWeightType)
+            console.log("numberWeightType/numberWeightTypeDropped",numberWeightType+"/"+numberWeightTypeDropped)
             if (numberWeightTypeDropped !== numberWeightType) {
-                items.numberClassDropAreaRepeater.itemAt(i).numberWeightsDropAreasRepeaterAlias.itemAt(j).numberWeightHeaderElement.border.width = 5   //?
+                items.numberClassDropAreaRepeater.itemAt(i).numberWeightsDropAreasRepeaterAlias.itemAt(j).numberWeightHeaderElement.border.width = 5
+                allNumbersInRightPositions = false
             }
             else items.numberClassDropAreaRepeater.itemAt(i).numberWeightsDropAreasRepeaterAlias.itemAt(j).numberWeightHeaderElement.border.width = 0
         }
     }
+    return allNumbersInRightPositions
 }
 
 function checkNumberClassesColumnsPositions() {
+    var allClassesColumnsInRightPositions = true
     for (var i=items.numberClassListModel.count-1, classNamesUsedIndex=0 ; i>=0; i--,classNamesUsedIndex++) {
         if (items.numberClassListModel.get(i).name === classNamesUsedArray[classNamesUsedIndex]) {
             items.numberClassListModel.setProperty(i, "misplaced", false)
         }
-        else items.numberClassListModel.setProperty(i, "misplaced", true)
+        else {
+            items.numberClassListModel.setProperty(i, "misplaced", true)
+            allClassesColumnsInRightPositions = false
+        }
+    }
+    return allClassesColumnsInRightPositions
+}
+
+
+function expectedAndEnteredValuesAreEquals() {
+    var enteredValue = readNumerationTableEnteredValue()
+    console.log("enteredValue/parseInt(numbersToConvert[numbersToConvertIndex],10)",enteredValue + "/" + parseInt(numbersToConvert[numbersToConvertIndex],10))
+
+    //test if entered value is equal to number expected
+    if (enteredValue === parseInt(numbersToConvert[numbersToConvertIndex],10)) {
+        console.log("enteredValue/parseInt(numbersToConvert[numbersToConvertIndex],10)",enteredValue + "/" + parseInt(numbersToConvert[numbersToConvertIndex],10))
+        return true
+    }
+    else {
+        return false
     }
 }
 
 function checkEnteredValue() {
-    var enteredValue = readNumerationTableEnteredValue()
+    var _expectedAndEnteredValuesAreEquals = expectedAndEnteredValuesAreEquals()
+    if (_expectedAndEnteredValuesAreEquals) {
+        return true
+    }
+    else {
+        return false
+    }
+}
 
-    //test if entered value is equal to number expected
-    if (enteredValue === parseInt(numbersToConvert[numbersToConvertIndex],10)) {
+function evaluateAndDisplayProgresses(correctAnswer) {
+    if (correctAnswer) {
         items.bonus.good("flower")
+        console.log("1///////////////scorePercentage",scorePercentage)
         scorePercentage = scorePercentage + scorePourcentageStep    //?
+        console.log("2///////////////scorePercentage",scorePercentage)
         items.progressBar.value = scorePercentage
         if (scorePercentage > 97) {
             nextLevel()
@@ -290,8 +353,8 @@ function checkEnteredValue() {
             numbersToConvert.push(randomValueToInsert)
         }
         //when user makes an error, the given error is inserted twice, one time to find the good result, a second time to be sure that the answer is understood
-        numbersToConvert.splice(numbersToConvertIndex+2, 0, numbersToConvert[numbersToConvertIndex]);
-        numbersToConvert.splice(numbersToConvertIndex+4, 0, numbersToConvert[numbersToConvertIndex]);
+        numbersToConvert.splice(numbersToConvertIndex+1, 0, numbersToConvert[numbersToConvertIndex]);
+        numbersToConvert.splice(numbersToConvertIndex+3, 0, numbersToConvert[numbersToConvertIndex]);
         numbersToConvertIndex++ //? how can we catch here the stop signal to wait a little bit before to go to next question ?
         items.numberToConvertRectangle.text = numbersToConvert[numbersToConvertIndex]
     }
@@ -303,6 +366,10 @@ function start(items_) {
 
     classNamesUsedArray = setClassNamesUsedArray(fullClassNamesConstantArray)
 
+    numberHasADecimalPart = hasNumberADecimalPart()
+    setNumberClassTypeListModel()
+    updateIntegerAndDecimalHeaderWidth()
+
     setNumberClassDragListModel(fullClassNamesConstantArray)
     setNumberWeightDragListModel(numberWeightComponentConstantArray)
     initLevel()
@@ -310,28 +377,70 @@ function start(items_) {
     numberOfLevel = items.levels.length  // ?
 }
 
-function setClassNamesUsedArray(fullClassNamesConstantArray) {
-    var smallerNumberClass = items.levels[currentLevel].smallerNumberClass
-    var biggerNumberClass = items.levels[currentLevel].biggerNumberClass
-    if (fullClassNamesConstantArray.indexOf(smallerNumberClass) !== -1 && fullClassNamesConstantArray.indexOf(biggerNumberClass)  !== -1) {
-        return fullClassNamesConstantArray.slice(fullClassNamesConstantArray.indexOf(smallerNumberClass),fullClassNamesConstantArray.indexOf(biggerNumberClass)+1)
-    }
-    else {
-        return fullClassNamesConstantArray
+
+function setNumberClassTypeListModel() {
+    items.numberClassTypeModel.append({"numberClassType": "Integer Part", "numberClassTypeHeaderWidth": 0})
+    if (hasNumberADecimalPart()) {
+        addDecimalHeaderToNumberClassTypeModel()
     }
 }
+
+
+function setClassNamesUsedArray(fullClassNamesArray) {
+    var smallerNumberClass = items.levels[currentLevel].smallerNumberClass
+    var biggerNumberClass = items.levels[currentLevel].biggerNumberClass
+    if (!isClassNamePresentInfullClassNamesArray(fullClassNamesArray, smallerNumberClass)) {
+        return fullClassNamesConstantArray
+    }
+    if (!isClassNamePresentInfullClassNamesArray(fullClassNamesArray, biggerNumberClass)) {
+        return fullClassNamesConstantArray
+    }
+    return fullClassNamesArray.slice(fullClassNamesArray.indexOf(smallerNumberClass),fullClassNamesArray.indexOf(biggerNumberClass)+1)
+}
+
+function isClassNamePresentInfullClassNamesArray(fullClassNamesArray, className) {
+    if (fullClassNamesArray.indexOf(className) !== -1) {
+        return true
+    } else {
+        items.warningRectangle.text = qsTr("The class name \"" + className + "\" is not present in the available list: \"" + fullClassNamesArray+ "\". Check your configuration file (lower case or uppercase error?).")
+        items.warningRectangle.show()
+        return false
+    }
+}
+
+function hasNumberADecimalPart() {
+    for (var i=0; i<classNamesUsedArray.length; i++) {
+        var classNameStr = classNamesUsedArray[i]
+        if (classNameStr === "Decimal Part") {
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
+function updateIntegerAndDecimalHeaderWidth() {
+    if (numberHasADecimalPart) {
+        if (items.numberClassListModel.count === 1) {
+            items.numberClassTypeModel.set(0,{"numberClassTypeHeaderWidth": 0})
+            items.numberClassTypeModel.set(1,{"numberClassTypeHeaderWidth": items.mainZoneArea.width})
+        } else {
+            items.numberClassTypeModel.set(0,{"numberClassTypeHeaderWidth": items.mainZoneArea.width - items.mainZoneArea.width / items.numberClassListModel.count})
+            items.numberClassTypeModel.set(1,{"numberClassTypeHeaderWidth": items.mainZoneArea.width / items.numberClassListModel.count})
+        }
+    } else {
+        console.log("items.numberClassTypeModel.get(0).numberClassTypeHeaderWidth",items.numberClassTypeModel.get(0).numberClassTypeHeaderWidth)
+        items.numberClassTypeModel.set(0,{"numberClassTypeHeaderWidth": items.mainZoneArea.width})
+        console.log("items.numberClassTypeModel.get(0).numberClassTypeHeaderWidth",items.numberClassTypeModel.get(0).numberClassTypeHeaderWidth)
+    }
+}
+
 
 function setNumberClassDragListModel(fullClassNamesConstantArray) {
     console.log("classNamesUsed " + classNamesUsedArray)
     for (var i=0; i<classNamesUsedArray.length; i++) {
         var classNameStr = classNamesUsedArray[i]
-        console.log("classname to add " + classNameStr)
-
-        if (classNameStr === "Decimal Part") {
-            console.log("appendDecimalPartClassColumn")
-            appendDecimalPartClassColumn()
-        }
-        else {
+        if (classNameStr !== "Decimal Part") {
             items.numberClassDragListModel.append({"name": numberClassesObj[classNameStr]["name"],
                                                     "color": numberClassesObj[classNameStr]["color"],
                                                     "dragkeys": numberClassesObj[classNameStr]["dragkeys"]})
@@ -356,10 +465,6 @@ function setNumberWeightDragListModel(numberWeightComponentConstantArray) {
     }
 }
 
-
-
-
-
 function selectNumberWeightDragElement(elementIndex) {
     console.log("--*-* " + items.numberWeightDragListModel.get(elementIndex).selected)
     if (items.numberWeightDragListModel.get(elementIndex).selected === true) {
@@ -383,28 +488,15 @@ function stop() {
 }
 
 
-function appendDecimalPartClassColumn() {
+function addDecimalHeaderToNumberClassTypeModel() {
     items.numberClassListModel.append({"name": "Decimal Part", "misplaced": false})
-    items.numberClassTypeModel.append({"numberClassType":  "Decimal Part"})
+    items.numberClassTypeModel.append({"numberClassType":  "Decimal Part", "numberClassTypeHeaderWidth": 0})
 }
 
 
 function appendClassNameColumn(className,element_src,misplaced) {
     items.numberClassListModel.insert(0,{"name": className, "element_src": element_src, "misplaced": false})
-}
-
-function addIntegerPartToListView(numberClassTypeModel) {
-    var hasIntegerPart = false
-    for (var i=0; i<numberClassTypeModel.count; i++) {
-        console.log("numberClassTypeModel.get(i).numberClassType",numberClassTypeModel.get(i).numberClassType)
-        if (numberClassTypeModel.get(i).numberClassType === "Integer Part") {
-            hasIntegerPart = true
-        }
-    }
-    if (hasIntegerPart === false) {
-        console.log("hasIntegerPart",hasIntegerPart)
-        numberClassTypeModel.insert(0, {"numberClassType": "Integer Part"})
-    }
+    updateIntegerAndDecimalHeaderWidth()
 }
 
 
@@ -434,7 +526,6 @@ function nextLevel() {
     if(numberOfLevel <= ++currentLevel) {
         currentLevel = 0
     }
-    items.currentSubLevel = 0;
     initLevel();
 }
 
@@ -442,6 +533,5 @@ function previousLevel() {
     if(--currentLevel < 0) {
         currentLevel = numberOfLevel - 1      //?
     }
-    items.currentSubLevel = 0;
     initLevel();
 }

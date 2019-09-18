@@ -21,6 +21,8 @@ import GCompris 1.0
 
 import "../../core"
 
+// TODO: make text fitting in Rectangle
+
 Rectangle {
     id: numberClassDragElement
 
@@ -42,7 +44,7 @@ Rectangle {
     GCText {
         id: numberClassElementCaption
 
-        anchors.fill: parent    //? here text does not fit un parent
+        anchors.fill: parent    //? here text does not fit in parent
         anchors.bottom: parent.bottom
         fontSizeMode: Text.Fit
         color: "white"

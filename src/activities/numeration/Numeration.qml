@@ -16,6 +16,16 @@
  *   along with this program; if not, see <https://www.gnu.org/licenses/>.
  */
 
+
+// TODO: ne valider que si les poids sont dans la bonne case
+// TODO: ajouter des niveaux pour pouvoir le faire tester par un élève
+// TODO: fix error when removing a class dragging it
+// TODO: give new number only when bonus is finished
+// TODO: remove cellsize
+// TODO: is it possible to have a vertical mode? If not remove everything related to vertical mode
+// TODO: remove settings in bar menu
+
+
 import QtQuick 2.6
 import GCompris 1.0
 import QtQuick.Layouts 1.3
@@ -41,7 +51,7 @@ ActivityBase {
         signal stop
 
         Component.onCompleted: {
-        	dialogActivityConfig.getInitialConfiguration()
+            dialogActivityConfig.getInitialConfiguration()
             activity.start.connect(start)
             activity.stop.connect(stop)
         }
@@ -51,11 +61,13 @@ ActivityBase {
             id: items
             property Item main: activity.main
             property alias background: background
+            property alias mainZoneArea: mainZoneArea
             property alias bar: bar
             property alias bonus: bonus
             property alias instruction: instruction
+            property alias warningRectangle: warningRectangle
             property alias dataset: dataset
-            property alias  numberClassListModel: numberClassListModel
+            property alias numberClassListModel: numberClassListModel
             property alias numberClassDragListModel: numberClassDragListModel
             property alias numberWeightDragListModel: numberWeightDragListModel
             property alias numberClassTypeModel: numberClassTypeModel
@@ -65,8 +77,6 @@ ActivityBase {
             property alias classNameListView: classNameListView
             property int barHeightAddon: ApplicationSettings.isBarHidden ? 1 : 3
             property int cellSize: Math.min(background.width / 11, background.height / (9 + barHeightAddon))
-            property int currentSubLevel: 0
-            property int nbSubLevel
             property var levels: activity.datasetLoader.item.data
             property alias numberToConvertRectangle: numberToConvertRectangle
         }
@@ -117,9 +127,8 @@ ActivityBase {
 
             onDropped: {
                 var className = drag.source.name
+                drag.source.dragEnabled = false
                 Activity.appendClassNameColumn(className, drag.source, false)
-                Activity.addIntegerPartToListView(numberClassTypeModel)
-                //numberClassListModel.get(numberClassListModel.count-1).element_src.dragEnabled = false  //?
             }
 
             Rectangle {
@@ -188,16 +197,9 @@ ActivityBase {
                 }
             }
 
-
+            //store strings Integer and Decimal to display in numeration table header
             ListModel {
                 id: numberClassTypeModel
-
-/*                ListElement {
-                    numberClassType: "Integer Part"
-                }
-                ListElement {
-                    numberClassType: "Decimal Part"
-                }*/
             }
 
             Rectangle {
@@ -219,7 +221,7 @@ ActivityBase {
                     //spacing: 10 //?
 
                     delegate: Rectangle {
-                        width: numberClassTypeModel.get(index).numberClassType === "Decimal Part" ? mainZoneArea.width / numberClassListModel.count : mainZoneArea.width - (mainZoneArea.width / (numberClassListModel.count))
+                        width: numberClassTypeModel.get(index).numberClassTypeHeaderWidth
                         height: numberClassTypeHeader.height / 1.5
                         border.width: 1
                         border.color: "black"
@@ -236,6 +238,7 @@ ActivityBase {
                            verticalAlignment: Text.AlignVCenter
                            horizontalAlignment: Text.AlignHCenter
                            text: numberClassTypeModel.get(index).numberClassType
+                           visible: numberClassTypeModel.get(index).numberClassTypeHeaderWidth === 0 ? false : true
                         }
                     }
                  }
@@ -309,6 +312,7 @@ ActivityBase {
                             console.log("index className element",index)
                             numberClassListModel.get(index).element_src.dragEnabled = true
                             numberClassListModel.remove(index,1)
+                            Activity.updateIntegerAndDecimalHeaderWidth()
                         }
                         held = false
                     }
@@ -324,6 +328,7 @@ ActivityBase {
                         width: mainZoneArea.width / numberClassListModel.count
                         height: numberClassHeaders.height / 1.5
                         border.width: 1
+                        //FIXME: when removing an element of NumberClassList model border color is stilll asked
                         border.color: numberClassListModel.get(index).misplaced === true ? "red" : "lightsteelblue"
                         color: dragArea.held ? "lightsteelblue" : "white"
                         Behavior on color { ColorAnimation { duration: 100 } }
@@ -467,6 +472,61 @@ ActivityBase {
             width: Math.max(Math.min(parent.width * 0.8, text.length * 8), parent.width * 0.3)
             wrapMode: TextEdit.WordWrap
         }
+
+
+        //display level objective
+        GCText {
+            id: warningTxt
+            anchors {
+                horizontalCenter: background.horizontalCenter
+                verticalCenter: background.verticalCenter
+            }
+            opacity: warningRectangle.opacity
+            z: warningRectangle.z + 1
+            fontSize: regularSize
+            color: "white"
+            style: Text.Outline
+            styleColor: "black"
+            horizontalAlignment: Text.AlignHCenter
+            width: Math.max(Math.min(parent.width * 0.8, text.length * 8), parent.width * 0.3)
+            wrapMode: TextEdit.WordWrap
+        }
+
+        Rectangle {
+            id: warningRectangle
+            anchors.fill: warningTxt
+            opacity: 0
+            radius: 10
+            border.width: 2
+            z: 10
+            border.color: "black"
+            gradient: Gradient {
+                GradientStop { position: 0.0; color: "#000" }
+                GradientStop { position: 0.9; color: "#666" }
+                GradientStop { position: 1.0; color: "#AAA" }
+            }
+
+            property alias text: warningTxt.text
+
+            Behavior on opacity { PropertyAnimation { duration: 200 } }
+
+            //shows/hides the Instruction
+            MouseArea {
+                anchors.fill: parent
+                onClicked: warningRectangle.hide()
+                enabled: warningRectangle.opacity !== 0
+            }
+
+            function show() {
+                if(text)
+                    opacity = 0.8
+            }
+            function hide() {
+                opacity = 0
+            }
+        }
+
+
 
 
 

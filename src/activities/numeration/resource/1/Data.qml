@@ -30,20 +30,20 @@ Dataset {
          "level" : "1",
          "objective" : qsTr("Drag the number weights in the right cells to create numbers up to 9"),
          //possible smallerNumberClass are "Decimal Part","Unit class","Thousand class","Million class","Milliard class"
-         "smallerNumberClass": "Unit Class",
+         "smallerNumberClass": "Unit class",
          //"smallerNumberClass": "Decimal Part",
          "biggerNumberClass": "Milliard class",
          "numbers" : [
+            "4",
             "1",
-            "2",
-            "3"
-/*            "4",
             "5",
             "6",
-            "7",
             "8",
+            "2",
             "9",
-            "10"*/
+            "3",
+            "7",
+            "10"
          ]
       },
       {

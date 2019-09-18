@@ -1,9 +1,9 @@
 /* GCompris - Data.qml
  *
- * Copyright (C) 2019 Akshay Kumar <email.akshay98@gmail.com>
+ * Copyright (C) 2019 Emmanuel Charruau <echarruau@gmail.com>
  *
  * Authors:
- *   Akshay Kumar <email.akshay98@gmail.com>
+ *   Emmanuel Charruau <echarruau@gmail.com>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
@@ -23,54 +23,92 @@ import GCompris 1.0
 import "../../../../core"
 
 Dataset {
-    objective: qsTr("Select a number on dice up to 7")
-    difficulty: 2
+    objective: qsTr("Drag the different numbers weights to obtain a number between 1 and 999.")
+    difficulty: 1
     data: [
       {
          "level" : "1",
-         "objective" : qsTr("Select the number on dice up to 4"),
-         "words" : [
-            "1",
-            "2",
-            "3",
-            "4"
+         "objective" : qsTr("Drag the number weights in the right cells to create numbers up to 99"),
+         //possible smallerNumberClass are "Decimal Part","Unit class","Thousand class","Million class","Milliard class"
+         "smallerNumberClass": "Unit class",
+         //"smallerNumberClass": "Decimal Part",
+         "biggerNumberClass": "Milliard class",
+         "numbers" : [
+            "40",
+            "10",
+            "50",
+            "65",
+            "82",
+            "95",
+            "25",
+            "37",
+            "86",
+            "99"
          ]
       },
       {
          "level" : "2",
-         "objective" : qsTr("Select the number on dice up to 5"),
-         "words" : [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"
+         "objective" : qsTr("Drag the number weights in the right cells to create numbers up to 199."),
+         "numbers" : [
+            "155",
+            "10",
+            "125",
+            "15",
+            "109",
+            "56",
+            "101",
+            "158",
+            "89",
+            "112"
          ]
       },
       {
          "level" : "3",
-         "objective" : qsTr("Select the number on dice up to 6"),
-         "words" : [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"
+         "objective" : qsTr("Drag the number weights in the right cells to create numbers up to 300"),
+         "numbers" : [
+            "256",
+            "122",
+            "85",
+            "215",
+            "288",
+            "105",
+            "203",
+            "158",
+            "89",
+            "109"
          ]
       },
       {
          "level" : "4",
-         "objective" : qsTr("Select the number on dice up to 7"),
-         "words" : [
-            "1",
-            "2",
-            "3",
-            "4",
+         "objective" : qsTr("Drag the number weights in the right cells to create numbers up to 700"),
+         "numbers" : [
+            "556",
+            "422",
+            "285",
+            "615",
+            "588",
+            "105",
+            "303",
+            "358",
+            "689",
+            "699"
+         ]
+      },
+      {
+         "level" : "5",
+         "objective" : qsTr("Drag the number weights in the right cells to create numbers up to 999"),
+         "numbers" : [
+            "62",
+            "822",
+            "900",
+            "600",
+            "689",
             "5",
-            "6",
-            "7"
+            "685",
+            "956",
+            "123",
+            "999"
          ]
       }
-   ]
+    ]
 }

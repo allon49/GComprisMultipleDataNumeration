@@ -160,6 +160,7 @@ Rectangle {
 
                                         property string caption: ""
                                         property string weightValue: ""
+                                        property alias border: numberWeightComponentRectangle.border
 
                                         anchors.fill: parent
                                         sourceSize.width: parent.width
@@ -169,7 +170,6 @@ Rectangle {
                                              anchors.fill: parent
                                              onClicked: {
                                                  if (numberWeightImageTile.status === Image.Ready) {
-                                                   // numberWeightImageTile.source = ""
                                                     Activity.removeNumberWeightComponent(numberWeightImageTile)
                                                  }
                                                  else {
