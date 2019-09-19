@@ -59,8 +59,8 @@ void GComprisPlugin::registerTypes(const char *uri)
     qmlRegisterSingletonType<GSynth>(uri, versionMajor, versionMinor,
                                      "GSynth", GSynth::synthProvider);
 
-    qmlRegisterType<cm::controllers::MasterController>("CM", 1, 0, "MasterController");
-    qmlRegisterType<cm::controllers::NavigationController>("CM", 1, 0, "NavigationController");
+    qmlRegisterType<cm::controllers::MasterController>(uri, 1, 0, "MasterController");
+    qmlRegisterType<cm::controllers::NavigationController>(uri, 1, 0, "NavigationController");
 
     cm::controllers::MasterController masterController;
 
