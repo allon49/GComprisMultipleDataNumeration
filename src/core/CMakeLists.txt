@@ -50,6 +50,12 @@ set(gcompris_SRCS
    synth/preset.cpp
    synth/waveform.cpp
    synth/waveform.h
+   serverMasterController/controllers/cm-lib_global.h
+   serverMasterController/controllers/master-controller.cpp
+   serverMasterController/controllers/master-controller.h
+   serverMasterController/controllers/navigation-controller.h
+   serverMasterController/models/client.cpp
+   serverMasterController/models/client.h
 )
 
 if(ANDROID)

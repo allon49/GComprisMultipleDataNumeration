@@ -29,6 +29,9 @@ import QtQuick.Controls 2.4
 import QtQuick.Dialogs 1.2
 import QtQuick.Controls.Material 2.1
 
+import GCompris 1.0
+
+
 
 import "../../core"
 import "server.js" as Activity
@@ -49,6 +52,7 @@ ActivityBase {
         Component.onCompleted: {
             activity.start.connect(start)
             activity.stop.connect(stop)
+            contentFrame.replace("views/DashboardView.qml");
         }
 
         // Add here the QML items you need to access in javascript
@@ -63,7 +67,46 @@ ActivityBase {
         onStart: { Activity.start(items) }
         onStop: { Activity.stop() }
 
-        Drawer {
+
+        Rectangle {
+            id: navigationBar
+            anchors {
+                top: parent.top
+                bottom: parent.bottom
+                left: parent.left
+            }
+            width: 100
+            color: "#000000"
+
+            Column {
+                Button {
+                    text: "Dashboard"
+                    onClicked: masterController.ui_navigationController.goDashboardView()
+                }
+                Button {
+                    text: "New Client"
+                    onClicked: masterController.ui_navigationController.goCreateClientView()
+                }
+                Button {
+                    text: "Find Client"
+                    onClicked: masterController.ui_navigationController.goFindClientView()
+                }
+            }
+        }
+
+        StackView {
+            id: contentFrame
+            anchors {
+                top: parent.top
+                bottom: parent.bottom
+                right: parent.right
+                left: navigationBar.right
+            }
+            initialItem: "qrc:/gcompris/src/activities/server/views/SplashView.qml"
+            clip: true
+        }
+
+/*        Drawer {
                id: drawer
 
                width: Math.min(background.width, background.height) / 3 * 2
@@ -131,14 +174,8 @@ ActivityBase {
                 onAccepted: {
                     image.source = fileOpenDialog.fileUrl
                 }
-            }
+            }*/
 
-
-        GCText {
-            anchors.centerIn: parent
-            text: "server activity"
-            fontSize: largeSize
-        }
 
         DialogHelp {
             id: dialogHelp

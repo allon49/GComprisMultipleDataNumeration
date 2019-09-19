@@ -27,6 +27,7 @@
 #include "DownloadManager.h"
 #include "synth/GSynth.h"
 #include <QQmlComponent>
+#include "serverMasterController/controllers/master-controller.h"
 
 const int versionMajor = 1;
 const int versionMinor = 0;
@@ -57,5 +58,10 @@ void GComprisPlugin::registerTypes(const char *uri)
 
     qmlRegisterSingletonType<GSynth>(uri, versionMajor, versionMinor,
                                      "GSynth", GSynth::synthProvider);
+
+    qmlRegisterType<cm::controllers::MasterController>("CM", 1, 0, "MasterController");
+    qmlRegisterType<cm::controllers::NavigationController>("CM", 1, 0, "NavigationController");
+
+    cm::controllers::MasterController masterController;
 
 }
