@@ -1,0 +1,1144 @@
+The target system is: Android - 1 - 
+The host system is: Linux - 4.15.0-62-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc 
+Build flags: 
+Id flags: -c 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+
+The C compiler identification is GNU, found in "/home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/3.10.2/CompilerIdC/CMakeCCompilerId.o"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ 
+Build flags: 
+Id flags: -c 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+
+The CXX compiler identification is GNU, found in "/home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.o"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_28abd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_28abd.dir/build.make CMakeFiles/cmTC_28abd.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_28abd.dir/testCCompiler.c.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi   -o CMakeFiles/cmTC_28abd.dir/testCCompiler.c.o   -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_28abd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_28abd.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm    /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  CMakeFiles/cmTC_28abd.dir/testCCompiler.c.o  -o cmTC_28abd  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8207f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8207f.dir/build.make CMakeFiles/cmTC_8207f.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_8207f.dir/CMakeCCompilerABI.c.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi   -o CMakeFiles/cmTC_8207f.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_8207f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8207f.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm    /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc -v CMakeFiles/cmTC_8207f.dir/CMakeCCompilerABI.c.o  -o cmTC_8207f  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+Using built-in specs.
+COLLECT_GCC=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc
+COLLECT_LTO_WRAPPER=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper
+Target: arm-linux-androideabi
+Configured with: /s/ndk-toolchain/src/build/../gcc/gcc-4.9/configure --prefix=/tmp/ndk-andrewhsieh/build/toolchain/prefix --target=arm-linux-androideabi --host=x86_64-linux-gnu --build=x86_64-linux-gnu --with-gnu-as --with-gnu-ld --enable-languages=c,c++ --with-gmp=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-mpfr=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-mpc=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-cloog=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-isl=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-ppl=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --disable-ppl-version-check --disable-cloog-version-check --disable-isl-version-check --enable-cloog-backend=isl --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --disable-libssp --enable-threads --disable-nls --disable-libmudflap --disable-libgomp --disable-libstdc__-v3 --disable-sjlj-exceptions --disable-shared --disable-tls --disable-libitm --with-float=soft --with-fpu=vfp --with-arch=armv5te --enable-target-optspace --enable-initfini-array --disable-nls --prefix=/tmp/ndk-andrewhsieh/build/toolchain/prefix --with-sysroot=/tmp/ndk-andrewhsieh/build/toolchain/prefix/sysroot --with-binutils-version=2.25 --with-mpfr-version=3.1.1 --with-mpc-version=1.0.1 --with-gmp-version=5.0.5 --with-gcc-version=4.9 --with-gdb-version=7.7 --with-python=/usr/local/google/home/andrewhsieh/mydroid/ndk/prebuilt/linux-x86_64/bin/python-config.sh --with-gxx-include-dir=/tmp/ndk-andrewhsieh/build/toolchain/prefix/include/c++/4.9 --with-bugurl=http://source.android.com/source/report-bugs.html --enable-languages=c,c++ --disable-bootstrap --enable-plugins --enable-libgomp --enable-gnu-indirect-function --disable-libsanitizer --enable-gold --enable-threads --enable-graphite=yes --with-cloog-version=0.18.0 --with-isl-version=0.11.1 --enable-eh-frame-hdr-for-static --with-arch=armv5te --program-transform-name='s&^&arm-linux-androideabi-&' --enable-gold=default
+Thread model: posix
+gcc version 4.9 20140827 (prerelease) (GCC) 
+COMPILER_PATH=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/bin/
+LIBRARY_PATH=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib/:/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8207f' '-L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib' '-L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a' '-march=armv5te' '-mfloat-abi=soft' '-mfpu=vfp' '-mtls-dialect=gnu'
+ /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/collect2 -plugin /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/liblto_plugin.so -plugin-opt=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccC0udu1.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-ldl -plugin-opt=-pass-through=-lgcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm --eh-frame-hdr -dynamic-linker /system/bin/linker -X -m armelf_linux_eabi -z noexecstack -z relro -z now -o cmTC_8207f /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtbegin_dynamic.o -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9 -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -rpath-link /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc CMakeFiles/cmTC_8207f.dir/CMakeCCompilerABI.c.o -lgcc -lc -ldl -lgcc /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtend_android.o
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(arm-linux-androideabi-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_8207f/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_8207f.dir/build.make CMakeFiles/cmTC_8207f.dir/build]
+  ignore line: [make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »]
+  ignore line: [Building C object CMakeFiles/cmTC_8207f.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi   -o CMakeFiles/cmTC_8207f.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_8207f]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8207f.dir/link.txt --verbose=1]
+  ignore line: [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm    /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc -v CMakeFiles/cmTC_8207f.dir/CMakeCCompilerABI.c.o  -o cmTC_8207f  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper]
+  ignore line: [Target: arm-linux-androideabi]
+  ignore line: [Configured with: /s/ndk-toolchain/src/build/../gcc/gcc-4.9/configure --prefix=/tmp/ndk-andrewhsieh/build/toolchain/prefix --target=arm-linux-androideabi --host=x86_64-linux-gnu --build=x86_64-linux-gnu --with-gnu-as --with-gnu-ld --enable-languages=c,c++ --with-gmp=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-mpfr=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-mpc=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-cloog=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-isl=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-ppl=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --disable-ppl-version-check --disable-cloog-version-check --disable-isl-version-check --enable-cloog-backend=isl --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --disable-libssp --enable-threads --disable-nls --disable-libmudflap --disable-libgomp --disable-libstdc__-v3 --disable-sjlj-exceptions --disable-shared --disable-tls --disable-libitm --with-float=soft --with-fpu=vfp --with-arch=armv5te --enable-target-optspace --enable-initfini-array --disable-nls --prefix=/tmp/ndk-andrewhsieh/build/toolchain/prefix --with-sysroot=/tmp/ndk-andrewhsieh/build/toolchain/prefix/sysroot --with-binutils-version=2.25 --with-mpfr-version=3.1.1 --with-mpc-version=1.0.1 --with-gmp-version=5.0.5 --with-gcc-version=4.9 --with-gdb-version=7.7 --with-python=/usr/local/google/home/andrewhsieh/mydroid/ndk/prebuilt/linux-x86_64/bin/python-config.sh --with-gxx-include-dir=/tmp/ndk-andrewhsieh/build/toolchain/prefix/include/c++/4.9 --with-bugurl=http://source.android.com/source/report-bugs.html --enable-languages=c,c++ --disable-bootstrap --enable-plugins --enable-libgomp --enable-gnu-indirect-function --disable-libsanitizer --enable-gold --enable-threads --enable-graphite=yes --with-cloog-version=0.18.0 --with-isl-version=0.11.1 --enable-eh-frame-hdr-for-static --with-arch=armv5te --program-transform-name='s&^&arm-linux-androideabi-&' --enable-gold=default]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.9 20140827 (prerelease) (GCC) ]
+  ignore line: [COMPILER_PATH=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/bin/]
+  ignore line: [LIBRARY_PATH=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib/:/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8207f' '-L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib' '-L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a' '-march=armv5te' '-mfloat-abi=soft' '-mfpu=vfp' '-mtls-dialect=gnu']
+  link line: [ /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/collect2 -plugin /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/liblto_plugin.so -plugin-opt=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccC0udu1.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-ldl -plugin-opt=-pass-through=-lgcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm --eh-frame-hdr -dynamic-linker /system/bin/linker -X -m armelf_linux_eabi -z noexecstack -z relro -z now -o cmTC_8207f /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtbegin_dynamic.o -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9 -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -rpath-link /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc CMakeFiles/cmTC_8207f.dir/CMakeCCompilerABI.c.o -lgcc -lc -ldl -lgcc /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtend_android.o]
+    arg [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccC0udu1.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-ldl] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/system/bin/linker] ==> ignore
+    arg [-X] ==> ignore
+    arg [-m] ==> ignore
+    arg [armelf_linux_eabi] ==> ignore
+    arg [-znoexecstack] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-znow] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_8207f] ==> ignore
+    arg [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtbegin_dynamic.o] ==> ignore
+    arg [-L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> dir [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib]
+    arg [-L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a] ==> dir [/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a]
+    arg [-L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9] ==> dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9]
+    arg [-L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc] ==> dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc]
+    arg [-L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib] ==> dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib]
+    arg [-L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> dir [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib]
+    arg [/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so] ==> ignore
+    arg [-rpath-link] ==> ignore
+    arg [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> ignore
+    arg [-llog] ==> lib [log]
+    arg [-lz] ==> lib [z]
+    arg [-lm] ==> lib [m]
+    arg [-ldl] ==> lib [dl]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [CMakeFiles/cmTC_8207f.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-ldl] ==> lib [dl]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtend_android.o] ==> ignore
+  collapse library dir [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib]
+  collapse library dir [/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a] ==> [/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a]
+  collapse library dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9] ==> [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9]
+  collapse library dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc] ==> [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc]
+  collapse library dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib] ==> [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/arm-linux-androideabi/lib]
+  collapse library dir [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib]
+  implicit libs: [log;z;m;dl;c;gcc;gcc;c;dl;gcc]
+  implicit dirs: [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib;/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a;/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9;/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc;/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/arm-linux-androideabi/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_23300/fast"
+/usr/bin/make -f CMakeFiles/cmTC_23300.dir/build.make CMakeFiles/cmTC_23300.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_23300.dir/feature_tests.c.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi  -std=c11 -o CMakeFiles/cmTC_23300.dir/feature_tests.c.o   -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/feature_tests.c
+Linking C executable cmTC_23300
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_23300.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm    /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  CMakeFiles/cmTC_23300.dir/feature_tests.c.o  -o cmTC_23300  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_43144/fast"
+/usr/bin/make -f CMakeFiles/cmTC_43144.dir/build.make CMakeFiles/cmTC_43144.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_43144.dir/feature_tests.c.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi  -std=c99 -o CMakeFiles/cmTC_43144.dir/feature_tests.c.o   -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/feature_tests.c
+Linking C executable cmTC_43144
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_43144.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm    /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  CMakeFiles/cmTC_43144.dir/feature_tests.c.o  -o cmTC_43144  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c5d4c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c5d4c.dir/build.make CMakeFiles/cmTC_c5d4c.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_c5d4c.dir/feature_tests.c.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi  -std=c90 -o CMakeFiles/cmTC_c5d4c.dir/feature_tests.c.o   -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/feature_tests.c
+Linking C executable cmTC_c5d4c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c5d4c.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm    /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  CMakeFiles/cmTC_c5d4c.dir/feature_tests.c.o  -o cmTC_c5d4c  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1f428/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1f428.dir/build.make CMakeFiles/cmTC_1f428.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_1f428.dir/testCXXCompiler.cxx.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm  -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi   -o CMakeFiles/cmTC_1f428.dir/testCXXCompiler.cxx.o -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_1f428
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1f428.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -fPIC /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  -shared  -o cmTC_1f428 CMakeFiles/cmTC_1f428.dir/testCXXCompiler.cxx.o  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5a2ee/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5a2ee.dir/build.make CMakeFiles/cmTC_5a2ee.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_5a2ee.dir/CMakeCXXCompilerABI.cpp.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm  -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi   -o CMakeFiles/cmTC_5a2ee.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_5a2ee
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5a2ee.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -fPIC /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc -v -shared  -o cmTC_5a2ee CMakeFiles/cmTC_5a2ee.dir/CMakeCXXCompilerABI.cpp.o  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+Using built-in specs.
+COLLECT_GCC=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++
+COLLECT_LTO_WRAPPER=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper
+Target: arm-linux-androideabi
+Configured with: /s/ndk-toolchain/src/build/../gcc/gcc-4.9/configure --prefix=/tmp/ndk-andrewhsieh/build/toolchain/prefix --target=arm-linux-androideabi --host=x86_64-linux-gnu --build=x86_64-linux-gnu --with-gnu-as --with-gnu-ld --enable-languages=c,c++ --with-gmp=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-mpfr=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-mpc=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-cloog=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-isl=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-ppl=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --disable-ppl-version-check --disable-cloog-version-check --disable-isl-version-check --enable-cloog-backend=isl --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --disable-libssp --enable-threads --disable-nls --disable-libmudflap --disable-libgomp --disable-libstdc__-v3 --disable-sjlj-exceptions --disable-shared --disable-tls --disable-libitm --with-float=soft --with-fpu=vfp --with-arch=armv5te --enable-target-optspace --enable-initfini-array --disable-nls --prefix=/tmp/ndk-andrewhsieh/build/toolchain/prefix --with-sysroot=/tmp/ndk-andrewhsieh/build/toolchain/prefix/sysroot --with-binutils-version=2.25 --with-mpfr-version=3.1.1 --with-mpc-version=1.0.1 --with-gmp-version=5.0.5 --with-gcc-version=4.9 --with-gdb-version=7.7 --with-python=/usr/local/google/home/andrewhsieh/mydroid/ndk/prebuilt/linux-x86_64/bin/python-config.sh --with-gxx-include-dir=/tmp/ndk-andrewhsieh/build/toolchain/prefix/include/c++/4.9 --with-bugurl=http://source.android.com/source/report-bugs.html --enable-languages=c,c++ --disable-bootstrap --enable-plugins --enable-libgomp --enable-gnu-indirect-function --disable-libsanitizer --enable-gold --enable-threads --enable-graphite=yes --with-cloog-version=0.18.0 --with-isl-version=0.11.1 --enable-eh-frame-hdr-for-static --with-arch=armv5te --program-transform-name='s&^&arm-linux-androideabi-&' --enable-gold=default
+Thread model: posix
+gcc version 4.9 20140827 (prerelease) (GCC) 
+COMPILER_PATH=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/bin/
+LIBRARY_PATH=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib/:/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/
+COLLECT_GCC_OPTIONS='-fPIC' '-v' '-shared' '-o' 'cmTC_5a2ee' '-L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib' '-L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a' '-march=armv5te' '-mfloat-abi=soft' '-mfpu=vfp' '-mtls-dialect=gnu'
+ /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/collect2 -plugin /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/liblto_plugin.so -plugin-opt=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdM8blg.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-ldl -plugin-opt=-pass-through=-lgcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm --eh-frame-hdr -shared -dynamic-linker /system/bin/linker -X -m armelf_linux_eabi -Bsymbolic -z noexecstack -z relro -z now -o cmTC_5a2ee /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9 -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -rpath-link /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -ldl -lgcc CMakeFiles/cmTC_5a2ee.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lc -lgcc -lc -ldl -lgcc /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(arm-linux-androideabi-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_5a2ee/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_5a2ee.dir/build.make CMakeFiles/cmTC_5a2ee.dir/build]
+  ignore line: [make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »]
+  ignore line: [Building CXX object CMakeFiles/cmTC_5a2ee.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm  -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi   -o CMakeFiles/cmTC_5a2ee.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_5a2ee]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5a2ee.dir/link.txt --verbose=1]
+  ignore line: [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -fPIC /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc -v -shared  -o cmTC_5a2ee CMakeFiles/cmTC_5a2ee.dir/CMakeCXXCompilerABI.cpp.o  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++]
+  ignore line: [COLLECT_LTO_WRAPPER=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper]
+  ignore line: [Target: arm-linux-androideabi]
+  ignore line: [Configured with: /s/ndk-toolchain/src/build/../gcc/gcc-4.9/configure --prefix=/tmp/ndk-andrewhsieh/build/toolchain/prefix --target=arm-linux-androideabi --host=x86_64-linux-gnu --build=x86_64-linux-gnu --with-gnu-as --with-gnu-ld --enable-languages=c,c++ --with-gmp=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-mpfr=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-mpc=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-cloog=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-isl=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-ppl=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --disable-ppl-version-check --disable-cloog-version-check --disable-isl-version-check --enable-cloog-backend=isl --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --disable-libssp --enable-threads --disable-nls --disable-libmudflap --disable-libgomp --disable-libstdc__-v3 --disable-sjlj-exceptions --disable-shared --disable-tls --disable-libitm --with-float=soft --with-fpu=vfp --with-arch=armv5te --enable-target-optspace --enable-initfini-array --disable-nls --prefix=/tmp/ndk-andrewhsieh/build/toolchain/prefix --with-sysroot=/tmp/ndk-andrewhsieh/build/toolchain/prefix/sysroot --with-binutils-version=2.25 --with-mpfr-version=3.1.1 --with-mpc-version=1.0.1 --with-gmp-version=5.0.5 --with-gcc-version=4.9 --with-gdb-version=7.7 --with-python=/usr/local/google/home/andrewhsieh/mydroid/ndk/prebuilt/linux-x86_64/bin/python-config.sh --with-gxx-include-dir=/tmp/ndk-andrewhsieh/build/toolchain/prefix/include/c++/4.9 --with-bugurl=http://source.android.com/source/report-bugs.html --enable-languages=c,c++ --disable-bootstrap --enable-plugins --enable-libgomp --enable-gnu-indirect-function --disable-libsanitizer --enable-gold --enable-threads --enable-graphite=yes --with-cloog-version=0.18.0 --with-isl-version=0.11.1 --enable-eh-frame-hdr-for-static --with-arch=armv5te --program-transform-name='s&^&arm-linux-androideabi-&' --enable-gold=default]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.9 20140827 (prerelease) (GCC) ]
+  ignore line: [COMPILER_PATH=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/bin/]
+  ignore line: [LIBRARY_PATH=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib/:/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-fPIC' '-v' '-shared' '-o' 'cmTC_5a2ee' '-L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib' '-L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a' '-march=armv5te' '-mfloat-abi=soft' '-mfpu=vfp' '-mtls-dialect=gnu']
+  link line: [ /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/collect2 -plugin /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/liblto_plugin.so -plugin-opt=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdM8blg.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-ldl -plugin-opt=-pass-through=-lgcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm --eh-frame-hdr -shared -dynamic-linker /system/bin/linker -X -m armelf_linux_eabi -Bsymbolic -z noexecstack -z relro -z now -o cmTC_5a2ee /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9 -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -rpath-link /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -ldl -lgcc CMakeFiles/cmTC_5a2ee.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lc -lgcc -lc -ldl -lgcc /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtend_so.o]
+    arg [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccdM8blg.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-ldl] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-shared] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/system/bin/linker] ==> ignore
+    arg [-X] ==> ignore
+    arg [-m] ==> ignore
+    arg [armelf_linux_eabi] ==> ignore
+    arg [-Bsymbolic] ==> ignore
+    arg [-znoexecstack] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-znow] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_5a2ee] ==> ignore
+    arg [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o] ==> ignore
+    arg [-L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> dir [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib]
+    arg [-L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a] ==> dir [/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a]
+    arg [-L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9] ==> dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9]
+    arg [-L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc] ==> dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc]
+    arg [-L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib] ==> dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib]
+    arg [-L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> dir [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib]
+    arg [/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so] ==> ignore
+    arg [-rpath-link] ==> ignore
+    arg [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> ignore
+    arg [-llog] ==> lib [log]
+    arg [-lz] ==> lib [z]
+    arg [-ldl] ==> lib [dl]
+    arg [-lgcc] ==> lib [gcc]
+    arg [CMakeFiles/cmTC_5a2ee.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-ldl] ==> lib [dl]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtend_so.o] ==> ignore
+  collapse library dir [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib]
+  collapse library dir [/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a] ==> [/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a]
+  collapse library dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9] ==> [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9]
+  collapse library dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc] ==> [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc]
+  collapse library dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib] ==> [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/arm-linux-androideabi/lib]
+  collapse library dir [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib]
+  implicit libs: [log;z;dl;gcc;stdc++;m;c;gcc;c;dl;gcc]
+  implicit dirs: [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib;/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a;/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9;/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc;/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/arm-linux-androideabi/lib]
+  implicit fwks: []
+
+
+
+
+Detecting CXX [-std=c++14] compiler features compiled with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_dca8a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_dca8a.dir/build.make CMakeFiles/cmTC_dca8a.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_dca8a.dir/feature_tests.cxx.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm  -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi  -std=c++14 -o CMakeFiles/cmTC_dca8a.dir/feature_tests.cxx.o -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_dca8a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dca8a.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -fPIC /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  -shared  -o cmTC_dca8a CMakeFiles/cmTC_dca8a.dir/feature_tests.cxx.o  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++11] compiler features compiled with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1b19b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1b19b.dir/build.make CMakeFiles/cmTC_1b19b.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_1b19b.dir/feature_tests.cxx.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm  -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi  -std=c++11 -o CMakeFiles/cmTC_1b19b.dir/feature_tests.cxx.o -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_1b19b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1b19b.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -fPIC /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  -shared  -o cmTC_1b19b CMakeFiles/cmTC_1b19b.dir/feature_tests.cxx.o  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++98] compiler features compiled with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5cc11/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5cc11.dir/build.make CMakeFiles/cmTC_5cc11.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_5cc11.dir/feature_tests.cxx.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm  -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi  -std=c++98 -o CMakeFiles/cmTC_5cc11.dir/feature_tests.cxx.o -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_5cc11
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5cc11.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -fPIC /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  -shared  -o cmTC_5cc11 CMakeFiles/cmTC_5cc11.dir/feature_tests.cxx.o  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:0cxx_alias_templates
+    Feature record: CXX_FEATURE:0cxx_alignas
+    Feature record: CXX_FEATURE:0cxx_alignof
+    Feature record: CXX_FEATURE:0cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:0cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:0cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:0cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:0cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:0cxx_default_function_template_args
+    Feature record: CXX_FEATURE:0cxx_defaulted_functions
+    Feature record: CXX_FEATURE:0cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:0cxx_delegating_constructors
+    Feature record: CXX_FEATURE:0cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:0cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:0cxx_explicit_conversions
+    Feature record: CXX_FEATURE:0cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:0cxx_extern_templates
+    Feature record: CXX_FEATURE:0cxx_final
+    Feature record: CXX_FEATURE:0cxx_func_identifier
+    Feature record: CXX_FEATURE:0cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:0cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:0cxx_inline_namespaces
+    Feature record: CXX_FEATURE:0cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:0cxx_local_type_template_args
+    Feature record: CXX_FEATURE:0cxx_long_long_type
+    Feature record: CXX_FEATURE:0cxx_noexcept
+    Feature record: CXX_FEATURE:0cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:0cxx_nullptr
+    Feature record: CXX_FEATURE:0cxx_override
+    Feature record: CXX_FEATURE:0cxx_range_for
+    Feature record: CXX_FEATURE:0cxx_raw_string_literals
+    Feature record: CXX_FEATURE:0cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:0cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:0cxx_rvalue_references
+    Feature record: CXX_FEATURE:0cxx_sizeof_member
+    Feature record: CXX_FEATURE:0cxx_static_assert
+    Feature record: CXX_FEATURE:0cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:0cxx_trailing_return_types
+    Feature record: CXX_FEATURE:0cxx_unicode_literals
+    Feature record: CXX_FEATURE:0cxx_uniform_initialization
+    Feature record: CXX_FEATURE:0cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:0cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:0cxx_variadic_macros
+    Feature record: CXX_FEATURE:0cxx_variadic_templates
+Performing C++ SOURCE FILE Test COMPILER_SUPPORTS_CXX11 succeeded with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5f0d7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5f0d7.dir/build.make CMakeFiles/cmTC_5f0d7.dir/build
+make[1]: Entering directory '/home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5f0d7.dir/src.cxx.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm  -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi  -DCOMPILER_SUPPORTS_CXX11   -std=c++11 -o CMakeFiles/cmTC_5f0d7.dir/src.cxx.o -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_5f0d7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f0d7.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -fPIC /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  -shared  -o cmTC_5f0d7 CMakeFiles/cmTC_5f0d7.dir/src.cxx.o 
+make[1]: Leaving directory '/home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORTS_CXX0X succeeded with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_34143/fast"
+/usr/bin/make -f CMakeFiles/cmTC_34143.dir/build.make CMakeFiles/cmTC_34143.dir/build
+make[1]: Entering directory '/home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_34143.dir/src.cxx.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm  -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi  -DCOMPILER_SUPPORTS_CXX0X   -std=c++0x -o CMakeFiles/cmTC_34143.dir/src.cxx.o -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_34143
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_34143.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -fPIC /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  -shared  -o cmTC_34143 CMakeFiles/cmTC_34143.dir/src.cxx.o 
+make[1]: Leaving directory '/home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+The target system is: Android - 1 - 
+The host system is: Linux - 4.15.0-62-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc 
+Build flags: 
+Id flags: -c 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+
+The C compiler identification is GNU, found in "/home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/3.10.2/CompilerIdC/CMakeCCompilerId.o"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ 
+Build flags: 
+Id flags: -c 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+
+The CXX compiler identification is GNU, found in "/home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.o"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b3027/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b3027.dir/build.make CMakeFiles/cmTC_b3027.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_b3027.dir/testCCompiler.c.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi   -o CMakeFiles/cmTC_b3027.dir/testCCompiler.c.o   -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_b3027
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b3027.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm    /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  CMakeFiles/cmTC_b3027.dir/testCCompiler.c.o  -o cmTC_b3027  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e4be7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e4be7.dir/build.make CMakeFiles/cmTC_e4be7.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_e4be7.dir/CMakeCCompilerABI.c.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi   -o CMakeFiles/cmTC_e4be7.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_e4be7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e4be7.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm    /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc -v CMakeFiles/cmTC_e4be7.dir/CMakeCCompilerABI.c.o  -o cmTC_e4be7  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+Using built-in specs.
+COLLECT_GCC=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc
+COLLECT_LTO_WRAPPER=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper
+Target: arm-linux-androideabi
+Configured with: /s/ndk-toolchain/src/build/../gcc/gcc-4.9/configure --prefix=/tmp/ndk-andrewhsieh/build/toolchain/prefix --target=arm-linux-androideabi --host=x86_64-linux-gnu --build=x86_64-linux-gnu --with-gnu-as --with-gnu-ld --enable-languages=c,c++ --with-gmp=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-mpfr=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-mpc=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-cloog=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-isl=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-ppl=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --disable-ppl-version-check --disable-cloog-version-check --disable-isl-version-check --enable-cloog-backend=isl --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --disable-libssp --enable-threads --disable-nls --disable-libmudflap --disable-libgomp --disable-libstdc__-v3 --disable-sjlj-exceptions --disable-shared --disable-tls --disable-libitm --with-float=soft --with-fpu=vfp --with-arch=armv5te --enable-target-optspace --enable-initfini-array --disable-nls --prefix=/tmp/ndk-andrewhsieh/build/toolchain/prefix --with-sysroot=/tmp/ndk-andrewhsieh/build/toolchain/prefix/sysroot --with-binutils-version=2.25 --with-mpfr-version=3.1.1 --with-mpc-version=1.0.1 --with-gmp-version=5.0.5 --with-gcc-version=4.9 --with-gdb-version=7.7 --with-python=/usr/local/google/home/andrewhsieh/mydroid/ndk/prebuilt/linux-x86_64/bin/python-config.sh --with-gxx-include-dir=/tmp/ndk-andrewhsieh/build/toolchain/prefix/include/c++/4.9 --with-bugurl=http://source.android.com/source/report-bugs.html --enable-languages=c,c++ --disable-bootstrap --enable-plugins --enable-libgomp --enable-gnu-indirect-function --disable-libsanitizer --enable-gold --enable-threads --enable-graphite=yes --with-cloog-version=0.18.0 --with-isl-version=0.11.1 --enable-eh-frame-hdr-for-static --with-arch=armv5te --program-transform-name='s&^&arm-linux-androideabi-&' --enable-gold=default
+Thread model: posix
+gcc version 4.9 20140827 (prerelease) (GCC) 
+COMPILER_PATH=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/bin/
+LIBRARY_PATH=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib/:/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e4be7' '-L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib' '-L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a' '-march=armv5te' '-mfloat-abi=soft' '-mfpu=vfp' '-mtls-dialect=gnu'
+ /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/collect2 -plugin /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/liblto_plugin.so -plugin-opt=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/cc353PtR.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-ldl -plugin-opt=-pass-through=-lgcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm --eh-frame-hdr -dynamic-linker /system/bin/linker -X -m armelf_linux_eabi -z noexecstack -z relro -z now -o cmTC_e4be7 /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtbegin_dynamic.o -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9 -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -rpath-link /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc CMakeFiles/cmTC_e4be7.dir/CMakeCCompilerABI.c.o -lgcc -lc -ldl -lgcc /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtend_android.o
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(arm-linux-androideabi-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_e4be7/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_e4be7.dir/build.make CMakeFiles/cmTC_e4be7.dir/build]
+  ignore line: [make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »]
+  ignore line: [Building C object CMakeFiles/cmTC_e4be7.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi   -o CMakeFiles/cmTC_e4be7.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_e4be7]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e4be7.dir/link.txt --verbose=1]
+  ignore line: [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm    /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc -v CMakeFiles/cmTC_e4be7.dir/CMakeCCompilerABI.c.o  -o cmTC_e4be7  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper]
+  ignore line: [Target: arm-linux-androideabi]
+  ignore line: [Configured with: /s/ndk-toolchain/src/build/../gcc/gcc-4.9/configure --prefix=/tmp/ndk-andrewhsieh/build/toolchain/prefix --target=arm-linux-androideabi --host=x86_64-linux-gnu --build=x86_64-linux-gnu --with-gnu-as --with-gnu-ld --enable-languages=c,c++ --with-gmp=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-mpfr=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-mpc=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-cloog=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-isl=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-ppl=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --disable-ppl-version-check --disable-cloog-version-check --disable-isl-version-check --enable-cloog-backend=isl --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --disable-libssp --enable-threads --disable-nls --disable-libmudflap --disable-libgomp --disable-libstdc__-v3 --disable-sjlj-exceptions --disable-shared --disable-tls --disable-libitm --with-float=soft --with-fpu=vfp --with-arch=armv5te --enable-target-optspace --enable-initfini-array --disable-nls --prefix=/tmp/ndk-andrewhsieh/build/toolchain/prefix --with-sysroot=/tmp/ndk-andrewhsieh/build/toolchain/prefix/sysroot --with-binutils-version=2.25 --with-mpfr-version=3.1.1 --with-mpc-version=1.0.1 --with-gmp-version=5.0.5 --with-gcc-version=4.9 --with-gdb-version=7.7 --with-python=/usr/local/google/home/andrewhsieh/mydroid/ndk/prebuilt/linux-x86_64/bin/python-config.sh --with-gxx-include-dir=/tmp/ndk-andrewhsieh/build/toolchain/prefix/include/c++/4.9 --with-bugurl=http://source.android.com/source/report-bugs.html --enable-languages=c,c++ --disable-bootstrap --enable-plugins --enable-libgomp --enable-gnu-indirect-function --disable-libsanitizer --enable-gold --enable-threads --enable-graphite=yes --with-cloog-version=0.18.0 --with-isl-version=0.11.1 --enable-eh-frame-hdr-for-static --with-arch=armv5te --program-transform-name='s&^&arm-linux-androideabi-&' --enable-gold=default]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.9 20140827 (prerelease) (GCC) ]
+  ignore line: [COMPILER_PATH=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/bin/]
+  ignore line: [LIBRARY_PATH=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib/:/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_e4be7' '-L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib' '-L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a' '-march=armv5te' '-mfloat-abi=soft' '-mfpu=vfp' '-mtls-dialect=gnu']
+  link line: [ /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/collect2 -plugin /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/liblto_plugin.so -plugin-opt=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/cc353PtR.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-ldl -plugin-opt=-pass-through=-lgcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm --eh-frame-hdr -dynamic-linker /system/bin/linker -X -m armelf_linux_eabi -z noexecstack -z relro -z now -o cmTC_e4be7 /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtbegin_dynamic.o -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9 -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -rpath-link /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc CMakeFiles/cmTC_e4be7.dir/CMakeCCompilerABI.c.o -lgcc -lc -ldl -lgcc /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtend_android.o]
+    arg [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc353PtR.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-ldl] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/system/bin/linker] ==> ignore
+    arg [-X] ==> ignore
+    arg [-m] ==> ignore
+    arg [armelf_linux_eabi] ==> ignore
+    arg [-znoexecstack] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-znow] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_e4be7] ==> ignore
+    arg [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtbegin_dynamic.o] ==> ignore
+    arg [-L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> dir [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib]
+    arg [-L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a] ==> dir [/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a]
+    arg [-L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9] ==> dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9]
+    arg [-L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc] ==> dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc]
+    arg [-L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib] ==> dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib]
+    arg [-L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> dir [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib]
+    arg [/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so] ==> ignore
+    arg [-rpath-link] ==> ignore
+    arg [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> ignore
+    arg [-llog] ==> lib [log]
+    arg [-lz] ==> lib [z]
+    arg [-lm] ==> lib [m]
+    arg [-ldl] ==> lib [dl]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [CMakeFiles/cmTC_e4be7.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-ldl] ==> lib [dl]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtend_android.o] ==> ignore
+  collapse library dir [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib]
+  collapse library dir [/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a] ==> [/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a]
+  collapse library dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9] ==> [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9]
+  collapse library dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc] ==> [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc]
+  collapse library dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib] ==> [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/arm-linux-androideabi/lib]
+  collapse library dir [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib]
+  implicit libs: [log;z;m;dl;c;gcc;gcc;c;dl;gcc]
+  implicit dirs: [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib;/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a;/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9;/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc;/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/arm-linux-androideabi/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d7e90/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d7e90.dir/build.make CMakeFiles/cmTC_d7e90.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_d7e90.dir/feature_tests.c.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi  -std=c11 -o CMakeFiles/cmTC_d7e90.dir/feature_tests.c.o   -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/feature_tests.c
+Linking C executable cmTC_d7e90
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d7e90.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm    /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  CMakeFiles/cmTC_d7e90.dir/feature_tests.c.o  -o cmTC_d7e90  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0ea34/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0ea34.dir/build.make CMakeFiles/cmTC_0ea34.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_0ea34.dir/feature_tests.c.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi  -std=c99 -o CMakeFiles/cmTC_0ea34.dir/feature_tests.c.o   -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/feature_tests.c
+Linking C executable cmTC_0ea34
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0ea34.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm    /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  CMakeFiles/cmTC_0ea34.dir/feature_tests.c.o  -o cmTC_0ea34  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1dcdb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1dcdb.dir/build.make CMakeFiles/cmTC_1dcdb.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_1dcdb.dir/feature_tests.c.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi  -std=c90 -o CMakeFiles/cmTC_1dcdb.dir/feature_tests.c.o   -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/feature_tests.c
+Linking C executable cmTC_1dcdb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1dcdb.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-gcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm    /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  CMakeFiles/cmTC_1dcdb.dir/feature_tests.c.o  -o cmTC_1dcdb  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_dd3d8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_dd3d8.dir/build.make CMakeFiles/cmTC_dd3d8.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_dd3d8.dir/testCXXCompiler.cxx.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm  -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi   -o CMakeFiles/cmTC_dd3d8.dir/testCXXCompiler.cxx.o -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_dd3d8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dd3d8.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -fPIC /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  -shared  -o cmTC_dd3d8 CMakeFiles/cmTC_dd3d8.dir/testCXXCompiler.cxx.o  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d9021/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d9021.dir/build.make CMakeFiles/cmTC_d9021.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_d9021.dir/CMakeCXXCompilerABI.cpp.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm  -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi   -o CMakeFiles/cmTC_d9021.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_d9021
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d9021.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -fPIC /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc -v -shared  -o cmTC_d9021 CMakeFiles/cmTC_d9021.dir/CMakeCXXCompilerABI.cpp.o  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+Using built-in specs.
+COLLECT_GCC=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++
+COLLECT_LTO_WRAPPER=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper
+Target: arm-linux-androideabi
+Configured with: /s/ndk-toolchain/src/build/../gcc/gcc-4.9/configure --prefix=/tmp/ndk-andrewhsieh/build/toolchain/prefix --target=arm-linux-androideabi --host=x86_64-linux-gnu --build=x86_64-linux-gnu --with-gnu-as --with-gnu-ld --enable-languages=c,c++ --with-gmp=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-mpfr=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-mpc=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-cloog=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-isl=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-ppl=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --disable-ppl-version-check --disable-cloog-version-check --disable-isl-version-check --enable-cloog-backend=isl --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --disable-libssp --enable-threads --disable-nls --disable-libmudflap --disable-libgomp --disable-libstdc__-v3 --disable-sjlj-exceptions --disable-shared --disable-tls --disable-libitm --with-float=soft --with-fpu=vfp --with-arch=armv5te --enable-target-optspace --enable-initfini-array --disable-nls --prefix=/tmp/ndk-andrewhsieh/build/toolchain/prefix --with-sysroot=/tmp/ndk-andrewhsieh/build/toolchain/prefix/sysroot --with-binutils-version=2.25 --with-mpfr-version=3.1.1 --with-mpc-version=1.0.1 --with-gmp-version=5.0.5 --with-gcc-version=4.9 --with-gdb-version=7.7 --with-python=/usr/local/google/home/andrewhsieh/mydroid/ndk/prebuilt/linux-x86_64/bin/python-config.sh --with-gxx-include-dir=/tmp/ndk-andrewhsieh/build/toolchain/prefix/include/c++/4.9 --with-bugurl=http://source.android.com/source/report-bugs.html --enable-languages=c,c++ --disable-bootstrap --enable-plugins --enable-libgomp --enable-gnu-indirect-function --disable-libsanitizer --enable-gold --enable-threads --enable-graphite=yes --with-cloog-version=0.18.0 --with-isl-version=0.11.1 --enable-eh-frame-hdr-for-static --with-arch=armv5te --program-transform-name='s&^&arm-linux-androideabi-&' --enable-gold=default
+Thread model: posix
+gcc version 4.9 20140827 (prerelease) (GCC) 
+COMPILER_PATH=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/bin/
+LIBRARY_PATH=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib/:/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/
+COLLECT_GCC_OPTIONS='-fPIC' '-v' '-shared' '-o' 'cmTC_d9021' '-L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib' '-L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a' '-march=armv5te' '-mfloat-abi=soft' '-mfpu=vfp' '-mtls-dialect=gnu'
+ /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/collect2 -plugin /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/liblto_plugin.so -plugin-opt=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccI31e48.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-ldl -plugin-opt=-pass-through=-lgcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm --eh-frame-hdr -shared -dynamic-linker /system/bin/linker -X -m armelf_linux_eabi -Bsymbolic -z noexecstack -z relro -z now -o cmTC_d9021 /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9 -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -rpath-link /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -ldl -lgcc CMakeFiles/cmTC_d9021.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lc -lgcc -lc -ldl -lgcc /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtend_so.o
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(arm-linux-androideabi-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_d9021/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_d9021.dir/build.make CMakeFiles/cmTC_d9021.dir/build]
+  ignore line: [make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »]
+  ignore line: [Building CXX object CMakeFiles/cmTC_d9021.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm  -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi   -o CMakeFiles/cmTC_d9021.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_d9021]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d9021.dir/link.txt --verbose=1]
+  ignore line: [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -fPIC /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc -v -shared  -o cmTC_d9021 CMakeFiles/cmTC_d9021.dir/CMakeCXXCompilerABI.cpp.o  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++]
+  ignore line: [COLLECT_LTO_WRAPPER=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper]
+  ignore line: [Target: arm-linux-androideabi]
+  ignore line: [Configured with: /s/ndk-toolchain/src/build/../gcc/gcc-4.9/configure --prefix=/tmp/ndk-andrewhsieh/build/toolchain/prefix --target=arm-linux-androideabi --host=x86_64-linux-gnu --build=x86_64-linux-gnu --with-gnu-as --with-gnu-ld --enable-languages=c,c++ --with-gmp=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-mpfr=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-mpc=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-cloog=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-isl=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --with-ppl=/tmp/ndk-andrewhsieh/build/toolchain/temp-install --disable-ppl-version-check --disable-cloog-version-check --disable-isl-version-check --enable-cloog-backend=isl --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --disable-libssp --enable-threads --disable-nls --disable-libmudflap --disable-libgomp --disable-libstdc__-v3 --disable-sjlj-exceptions --disable-shared --disable-tls --disable-libitm --with-float=soft --with-fpu=vfp --with-arch=armv5te --enable-target-optspace --enable-initfini-array --disable-nls --prefix=/tmp/ndk-andrewhsieh/build/toolchain/prefix --with-sysroot=/tmp/ndk-andrewhsieh/build/toolchain/prefix/sysroot --with-binutils-version=2.25 --with-mpfr-version=3.1.1 --with-mpc-version=1.0.1 --with-gmp-version=5.0.5 --with-gcc-version=4.9 --with-gdb-version=7.7 --with-python=/usr/local/google/home/andrewhsieh/mydroid/ndk/prebuilt/linux-x86_64/bin/python-config.sh --with-gxx-include-dir=/tmp/ndk-andrewhsieh/build/toolchain/prefix/include/c++/4.9 --with-bugurl=http://source.android.com/source/report-bugs.html --enable-languages=c,c++ --disable-bootstrap --enable-plugins --enable-libgomp --enable-gnu-indirect-function --disable-libsanitizer --enable-gold --enable-threads --enable-graphite=yes --with-cloog-version=0.18.0 --with-isl-version=0.11.1 --enable-eh-frame-hdr-for-static --with-arch=armv5te --program-transform-name='s&^&arm-linux-androideabi-&' --enable-gold=default]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.9 20140827 (prerelease) (GCC) ]
+  ignore line: [COMPILER_PATH=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/bin/]
+  ignore line: [LIBRARY_PATH=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/:/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib/:/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-fPIC' '-v' '-shared' '-o' 'cmTC_d9021' '-L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib' '-L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a' '-march=armv5te' '-mfloat-abi=soft' '-mfpu=vfp' '-mtls-dialect=gnu']
+  link line: [ /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/collect2 -plugin /home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/liblto_plugin.so -plugin-opt=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccI31e48.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-ldl -plugin-opt=-pass-through=-lgcc --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm --eh-frame-hdr -shared -dynamic-linker /system/bin/linker -X -m armelf_linux_eabi -Bsymbolic -z noexecstack -z relro -z now -o cmTC_d9021 /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9 -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc -L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -rpath-link /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -ldl -lgcc CMakeFiles/cmTC_d9021.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lc -lgcc -lc -ldl -lgcc /home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtend_so.o]
+    arg [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../libexec/gcc/arm-linux-androideabi/4.9/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccI31e48.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-ldl] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-shared] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/system/bin/linker] ==> ignore
+    arg [-X] ==> ignore
+    arg [-m] ==> ignore
+    arg [armelf_linux_eabi] ==> ignore
+    arg [-Bsymbolic] ==> ignore
+    arg [-znoexecstack] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-znow] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_d9021] ==> ignore
+    arg [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtbegin_so.o] ==> ignore
+    arg [-L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> dir [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib]
+    arg [-L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a] ==> dir [/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a]
+    arg [-L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9] ==> dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9]
+    arg [-L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc] ==> dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc]
+    arg [-L/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib] ==> dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib]
+    arg [-L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> dir [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib]
+    arg [/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so] ==> ignore
+    arg [-rpath-link] ==> ignore
+    arg [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> ignore
+    arg [-llog] ==> lib [log]
+    arg [-lz] ==> lib [z]
+    arg [-ldl] ==> lib [dl]
+    arg [-lgcc] ==> lib [gcc]
+    arg [CMakeFiles/cmTC_d9021.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-ldl] ==> lib [dl]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib/crtend_so.o] ==> ignore
+  collapse library dir [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib]
+  collapse library dir [/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a] ==> [/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a]
+  collapse library dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9] ==> [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9]
+  collapse library dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc] ==> [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc]
+  collapse library dir [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../lib/gcc/arm-linux-androideabi/4.9/../../../../arm-linux-androideabi/lib] ==> [/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/arm-linux-androideabi/lib]
+  collapse library dir [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib] ==> [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib]
+  implicit libs: [log;z;dl;gcc;stdc++;m;c;gcc;c;dl;gcc]
+  implicit dirs: [/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib;/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a;/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9;/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc;/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/arm-linux-androideabi/lib]
+  implicit fwks: []
+
+
+
+
+Detecting CXX [-std=c++14] compiler features compiled with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_50233/fast"
+/usr/bin/make -f CMakeFiles/cmTC_50233.dir/build.make CMakeFiles/cmTC_50233.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_50233.dir/feature_tests.cxx.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm  -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi  -std=c++14 -o CMakeFiles/cmTC_50233.dir/feature_tests.cxx.o -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_50233
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_50233.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -fPIC /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  -shared  -o cmTC_50233 CMakeFiles/cmTC_50233.dir/feature_tests.cxx.o  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++11] compiler features compiled with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8b342/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8b342.dir/build.make CMakeFiles/cmTC_8b342.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_8b342.dir/feature_tests.cxx.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm  -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi  -std=c++11 -o CMakeFiles/cmTC_8b342.dir/feature_tests.cxx.o -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_8b342
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8b342.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -fPIC /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  -shared  -o cmTC_8b342 CMakeFiles/cmTC_8b342.dir/feature_tests.cxx.o  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++98] compiler features compiled with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_59dd5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_59dd5.dir/build.make CMakeFiles/cmTC_59dd5.dir/build
+make[1] : on entre dans le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_59dd5.dir/feature_tests.cxx.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm  -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi  -std=c++98 -o CMakeFiles/cmTC_59dd5.dir/feature_tests.cxx.o -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_59dd5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_59dd5.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -fPIC /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  -shared  -o cmTC_59dd5 CMakeFiles/cmTC_59dd5.dir/feature_tests.cxx.o  -L/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib  -L/home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a 
+make[1] : on quitte le répertoire « /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp »
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:0cxx_alias_templates
+    Feature record: CXX_FEATURE:0cxx_alignas
+    Feature record: CXX_FEATURE:0cxx_alignof
+    Feature record: CXX_FEATURE:0cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:0cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:0cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:0cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:0cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:0cxx_default_function_template_args
+    Feature record: CXX_FEATURE:0cxx_defaulted_functions
+    Feature record: CXX_FEATURE:0cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:0cxx_delegating_constructors
+    Feature record: CXX_FEATURE:0cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:0cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:0cxx_explicit_conversions
+    Feature record: CXX_FEATURE:0cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:0cxx_extern_templates
+    Feature record: CXX_FEATURE:0cxx_final
+    Feature record: CXX_FEATURE:0cxx_func_identifier
+    Feature record: CXX_FEATURE:0cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:0cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:0cxx_inline_namespaces
+    Feature record: CXX_FEATURE:0cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:0cxx_local_type_template_args
+    Feature record: CXX_FEATURE:0cxx_long_long_type
+    Feature record: CXX_FEATURE:0cxx_noexcept
+    Feature record: CXX_FEATURE:0cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:0cxx_nullptr
+    Feature record: CXX_FEATURE:0cxx_override
+    Feature record: CXX_FEATURE:0cxx_range_for
+    Feature record: CXX_FEATURE:0cxx_raw_string_literals
+    Feature record: CXX_FEATURE:0cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:0cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:0cxx_rvalue_references
+    Feature record: CXX_FEATURE:0cxx_sizeof_member
+    Feature record: CXX_FEATURE:0cxx_static_assert
+    Feature record: CXX_FEATURE:0cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:0cxx_trailing_return_types
+    Feature record: CXX_FEATURE:0cxx_unicode_literals
+    Feature record: CXX_FEATURE:0cxx_uniform_initialization
+    Feature record: CXX_FEATURE:0cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:0cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:0cxx_variadic_macros
+    Feature record: CXX_FEATURE:0cxx_variadic_templates
+Performing C++ SOURCE FILE Test COMPILER_SUPPORTS_CXX11 succeeded with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5c008/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5c008.dir/build.make CMakeFiles/cmTC_5c008.dir/build
+make[1]: Entering directory '/home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5c008.dir/src.cxx.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm  -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi  -DCOMPILER_SUPPORTS_CXX11   -std=c++11 -o CMakeFiles/cmTC_5c008.dir/src.cxx.o -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_5c008
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5c008.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -fPIC /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  -shared  -o cmTC_5c008 CMakeFiles/cmTC_5c008.dir/src.cxx.o 
+make[1]: Leaving directory '/home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORTS_CXX0X succeeded with the following output:
+Change Dir: /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1e701/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1e701.dir/build.make CMakeFiles/cmTC_1e701.dir/build
+make[1]: Entering directory '/home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_1e701.dir/src.cxx.o
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm  -DANDROID -D__ANDROID_API__=14 -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include -isystem /home/charruau/Android/android-ndk/sysroot/usr/include/arm-linux-androideabi  -DCOMPILER_SUPPORTS_CXX0X   -std=c++0x -o CMakeFiles/cmTC_1e701.dir/src.cxx.o -c /home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_1e701
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1e701.dir/link.txt --verbose=1
+/home/charruau/Android/android-ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-g++ --sysroot=/home/charruau/Android/android-ndk/platforms/android-14/arch-arm -fPIC /home/charruau/Android/android-ndk/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/libgnustl_shared.so -Wl,-rpath-link,/home/charruau/Android/android-ndk/platforms/android-14/arch-arm/usr/lib -llog -lz -lm -ldl -lc -lgcc  -shared  -o cmTC_1e701 CMakeFiles/cmTC_1e701.dir/src.cxx.o 
+make[1]: Leaving directory '/home/charruau/Development/GComprisMultipleDataNumeration/gcompris/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }

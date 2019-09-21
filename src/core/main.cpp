@@ -30,6 +30,7 @@
 #include <QPixmap>
 #include <QSettings>
 
+
 #include "GComprisPlugin.h"
 #include "ApplicationInfo.h"
 #include "ActivityInfoTree.h"
@@ -110,6 +111,7 @@ int main(int argc, char *argv[])
     app.setApplicationName(GCOMPRIS_APPLICATION_NAME);
     app.setOrganizationDomain("kde.org");
     app.setApplicationVersion(ApplicationInfo::GCVersion());
+
     
     //add a variable to disable default fullscreen on Mac, see below..
 #if defined(Q_OS_MAC)

@@ -58,4 +58,5 @@ void GComprisPlugin::registerTypes(const char *uri)
     qmlRegisterSingletonType<GSynth>(uri, versionMajor, versionMinor,
                                      "GSynth", GSynth::synthProvider);
 
+
 }

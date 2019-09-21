@@ -11,6 +11,6 @@
  "application-binary": "@CMAKE_LIBRARY_OUTPUT_DIRECTORY@/libGCompris.so",
  "android-package-source-directory": "@PACKAGE_SOURCE_ANDROID@/",
  "android-package": "net.gcompris",
- "android-extra-plugins": "@CMAKE_BINARY_DIR@/lib/qml"
- @STDCPP_PATH@
+ "android-extra-plugins": "@CMAKE_BINARY_DIR@/lib/qml",
+ "stdcpp-path": "/home/charruau/Android/android-ndk/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a/libc++_shared.so"
 }
